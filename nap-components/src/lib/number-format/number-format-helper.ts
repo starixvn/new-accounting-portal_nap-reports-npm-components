@@ -1,3 +1,4 @@
+import * as _ from 'lodash';
 import { NumberFormatType } from './number-format.model';
 
 export let NumberFormatHelper = {
@@ -23,6 +24,10 @@ const percentFormat = new Intl.NumberFormat('en-US', {
 });
 
 function format(input: number, type: NumberFormatType) {
+    if (_.isNil(input)) {
+        return 'N/A';
+    }
+
     switch (type) {
         case NumberFormatType.Integer:
             return integerFormat.format(input);

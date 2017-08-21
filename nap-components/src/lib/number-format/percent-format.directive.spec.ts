@@ -8,7 +8,7 @@ import { expect } from '../../testing';
 @Component({
   selector: 'nap-test',
   template: `
-  <div [napPercentFormat]=""></div>
+  <div [napPercentFormat]="null"></div>
   <div [napPercentFormat]="0"></div>
   <div [napPercentFormat]="0/0"></div>
   <div [napPercentFormat]="1/0"></div>
@@ -44,8 +44,8 @@ describe('PercentFormatDirective', () => {
     expectElement(0, '', 'N/A');
   });
 
-  it('should mark value 0 as text "0.00%" and className ""', () => {
-    expectElement(1, '', '0.00%');
+  it('should mark value 0 as text "0.00%" and className "number-zero"', () => {
+    expectElement(1, 'number-zero', '0.00%');
   });
 
   it('should mark value 0/0 as text "N/A" and className ""', () => {

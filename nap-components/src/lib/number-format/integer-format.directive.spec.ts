@@ -8,7 +8,7 @@ import { expect } from '../../testing';
 @Component({
   selector: 'nap-test',
   template: `
-  <div [napIntegerFormat]=""></div>
+  <div [napIntegerFormat]="null"></div>
   <div [napIntegerFormat]="0"></div>
   <div [napIntegerFormat]="153256.321962"></div>
   <div [napIntegerFormat]="-153256.321962"></div>
@@ -37,12 +37,12 @@ describe('IntegerFormatDirective', () => {
     expect(des[index].nativeElement).toHaveText(text);
   }
 
-  it('should mark empty value as text "NaN" and className ""', () => {
-    expectElement(0, '', 'NaN');
+  it('should mark empty value as text "N/A" and className ""', () => {
+    expectElement(0, '', 'N/A');
   });
 
-  it('should mark value 0 as text "0" and className ""', () => {
-    expectElement(1, '', '0');
+  it('should mark value 0 as text "0" and className "number-zero"', () => {
+    expectElement(1, 'number-zero', '0');
   });
 
   it('should mark value 153256.321962 as text "153,256" and className "number-positive"', () => {
