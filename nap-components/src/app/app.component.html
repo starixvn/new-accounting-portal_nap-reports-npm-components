@@ -1,0 +1,15 @@
+<nap-navbar></nap-navbar>
+<div class="container-fluid" style="min-width: 1215px;">
+  <div class="header-container">
+    <div class="header-title">
+      Win Limit Control / <span class="active">Win Limit Monitor</span>
+      <i class="icon" [ngClass]="{'icon-expand': isShowFilter, 'icon-collapse': !isShowFilter}" (click)="isShowFilter = !isShowFilter"
+        [title]="isShowFilter ? 'Hide filter' : 'Show filter'"></i>
+    </div>
+    <div>GMT-4</div>
+  </div>
+  <nap-filter [hidden]="!isShowFilter" (generate)="filterModel = $event"></nap-filter>
+  <nap-toast></nap-toast>
+  <nap-grid [filterModel]="filterModel"></nap-grid>
+</div>
+<nap-spinner></nap-spinner>

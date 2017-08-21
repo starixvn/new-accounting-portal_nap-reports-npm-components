@@ -1,0 +1,46 @@
+{
+    "compileOnSave": false,
+    "compilerOptions": {
+        "baseUrl": ".",
+        "outDir": "./dist",
+        "target": "es5",
+        "module": "es2015",
+        "moduleResolution": "node",
+        "sourceMap": true,
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "declaration": true,
+        "lib": [
+            "es2016",
+            "dom"
+        ]
+    },
+    "files": [
+        "tmp/breadcrumb/index.ts",
+        "tmp/chart/index.ts",
+        "tmp/countdown-timer/index.ts",
+        "tmp/date/index.ts",
+        "tmp/dropdown-select/index.ts",
+        "tmp/dropdown-treeview-select/index.ts",
+        "tmp/dropdown-typeahead/index.ts",
+        "tmp/confirmation/index.ts",
+        "tmp/legend/index.ts",
+        "tmp/http/index.ts",
+        "tmp/navbar/index.ts",
+        "tmp/note/index.ts",
+        "tmp/number-format/index.ts",
+        "tmp/pagination/index.ts",
+        "tmp/select/index.ts",
+        "tmp/spinner/index.ts",
+        "tmp/toast/index.ts",
+        "tmp/helper.ts",
+        "tmp/model.ts"
+    ],
+    "exclude": [
+        "node_modules"
+    ],
+    "angularCompilerOptions": {
+        "skipTemplateCodegen": true,
+        "strictMetadataEmit": true
+    }
+}

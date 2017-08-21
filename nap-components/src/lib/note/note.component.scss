@@ -1,0 +1,13 @@
+:host {
+    display: block;
+    margin-bottom: .3rem;
+}
+
+.header {
+    display: inline-block;
+    font-weight: bold;
+    cursor: pointer;
+    .fa {
+        color: gray;
+    }
+}

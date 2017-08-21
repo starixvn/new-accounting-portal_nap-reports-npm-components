@@ -1,0 +1,18 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import '~nap-theme/css/theme.css';
+.spinner-loading {
+    background-image: url("assets/spinner.gif");
+}
+
+.navbar-brand {
+    .logo {
+        background-image: url("assets/logo.png");
+        width: 113px;
+        height: 24px;
+    }
+}
+
+.number-negative {
+    color: red;
+}

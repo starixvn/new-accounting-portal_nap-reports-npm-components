@@ -1,0 +1,15 @@
+<div class="second">{{ message }}</div>
+<i class="fa fa-refresh" aria-hidden="true" (click)="refresh()" title="Refresh"></i>
+<div class="countdown-dropdown">
+    <i class="fa fa-caret-down" aria-hidden="true"></i>
+</div>
+<div [hidden]="!isShowIntervals" class="countdown-intervals">
+    <div *ngFor="let interval of intervals" (click)="select(interval)">
+        <i class="fa fa-circle" [class.countdown-selected]="selectedInterval===interval" aria-hidden="true"></i>
+        <span>{{ interval }} seconds</span>
+    </div>
+    <div (click)="select(0)">
+        <i class="fa fa-circle" [class.countdown-selected]="selectedInterval===0" aria-hidden="true"></i>
+        <span>{{ notRefreshMessage }}</span>
+    </div>
+</div>

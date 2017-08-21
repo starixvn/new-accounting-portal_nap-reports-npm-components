@@ -1,0 +1,117 @@
+<div class="filter-container">
+    <div class="row">
+        <div class="col-nap col-nap-1">
+            <div class="group-nap">
+                <label>From Date</label>
+                <div class="control-nap">
+                    <nap-date-picker [(date)]="fromDate"></nap-date-picker>
+                </div>
+            </div>
+        </div>
+        <div class="col-nap col-nap-2">
+            <div class="group-nap">
+                <label>To Date</label>
+                <div class="control-nap">
+                    <nap-date-picker [(date)]="toDate"></nap-date-picker>
+                </div>
+            </div>
+        </div>
+        <div class="col-nap col-nap-3">
+            <div class="group-nap">
+                <label>Product</label>
+                <div class="control-nap">
+                    <select class="form-control" [(ngModel)]="productId">
+                        <option *ngFor="let product of products" [ngValue]="product.id">
+                            {{product.name}}
+                        </option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="col-nap col-nap-4">
+            <div class="group-nap">
+                <label>Reached Limit Level</label>
+                <div class="control-nap">
+                    <nap-dropdown-select [items]="reachedLimitLevels" [(value)]="reachedLimitLevel"></nap-dropdown-select>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-nap col-nap-1">
+            <div class="group-nap">
+                <label>Username</label>
+                <div class="control-nap">
+                    <input type="text" class="form-control" [(ngModel)]="userName">
+                </div>
+            </div>
+        </div>
+        <div class="col-nap col-nap-2">
+            <div class="group-nap">
+                <label>Site / Licensee</label>
+                <div class="control-nap">
+                    <nap-dropdown-treeview-select [items]="sites" [(value)]="site"></nap-dropdown-treeview-select>
+                </div>
+            </div>
+        </div>
+        <div class="col-nap col-nap-3">
+            <div class="group-nap">
+                <label>Currency</label>
+                <div class="control-nap">
+                    <select class="form-control" [(ngModel)]="currencyId">
+                        <option *ngFor="let currency of currencies" [ngValue]="currency.id">
+                            {{currency.name}}
+                        </option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="col-nap col-nap-exclude-test">
+            <div class="d-inline-block">
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <input type="checkbox" class="form-check-input" [(ngModel)]="isExcludeTestData">
+                        Exclude test data
+                    </label>
+                </div>
+            </div>
+            <div class="pull-right">
+                <button type="button" class="btn btn-primary" (click)="search()">
+                    Search
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <button class="btn btn-secondary" (click)="showConfirmation()">Show confirmation</button>
+            <button class="btn btn-secondary" (click)="loadSite()">Reload Site / Licensee</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            NumberFormat:
+            <span>
+                Value: {{value}}
+            </span>
+            <span>
+                Integer format: <span [napIntegerFormat]="value"></span>
+            </span>
+            <span>
+                Decimal format: <span [napDecimalFormat]="value"></span>
+            </span>
+            <span>
+                Percent format: <span [napPercentFormat]="value"></span>
+            </span>
+            <span>
+                <button class="btn btn-secondary" (click)="value = value * 2">Double value</button>
+                <button class="btn btn-secondary" (click)="value = -value">Swap</button>
+            </span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            Site: {{site}}
+        </div>
+    </div>
+</div>

@@ -1,0 +1,761 @@
+[
+  {
+    "ProductName": "Allbet",
+    "CurrencyName": "CNY (RMB)",
+    "SiteName": "033333",
+    "Groups": [
+      {
+        "ProductId": 21,
+        "CurrencyId": 13,
+        "SiteId": 32,
+        "GroupId": 9,
+        "GroupName": "Allbet Casino",
+        "OrangeMaxWinLimit": 12,
+        "YellowMaxWinLimit": 234560,
+        "RedMaxWinLimit": 789100,
+        "IsBlockedPlacebetRedLevel": false,
+        "IsBlockedTransferRedLevel": false,
+        "IsCreditSite": true
+      },
+      {
+        "ProductId": 21,
+        "CurrencyId": 13,
+        "SiteId": 32,
+        "GroupId": 8,
+        "GroupName": "Allbet Casino VIP",
+        "OrangeMaxWinLimit": 12,
+        "YellowMaxWinLimit": 500000,
+        "RedMaxWinLimit": 800000,
+        "IsBlockedPlacebetRedLevel": false,
+        "IsBlockedTransferRedLevel": false,
+        "IsCreditSite": true
+      }
+    ]
+  },
+  {
+    "ProductName": "Allbet",
+    "CurrencyName": "CNY (RMB)",
+    "SiteName": "12Bet",
+    "Groups": [
+      {
+        "ProductId": 21,
+        "CurrencyId": 13,
+        "SiteId": 30,
+        "GroupId": 9,
+        "GroupName": "Allbet Casino",
+        "OrangeMaxWinLimit": 100000,
+        "YellowMaxWinLimit": 300000,
+        "RedMaxWinLimit": 500000,
+        "IsBlockedPlacebetRedLevel": false,
+        "IsBlockedTransferRedLevel": false,
+        "IsCreditSite": false
+      },
+      {
+        "ProductId": 21,
+        "CurrencyId": 13,
+        "SiteId": 30,
+        "GroupId": 8,
+        "GroupName": "Allbet Casino VIP",
+        "OrangeMaxWinLimit": 200000,
+        "YellowMaxWinLimit": 500000,
+        "RedMaxWinLimit": 800000,
+        "IsBlockedPlacebetRedLevel": false,
+        "IsBlockedTransferRedLevel": false,
+        "IsCreditSite": false
+      }
+    ]
+  },
+  {
+    "ProductName": "Allbet",
+    "CurrencyName": "CNY (RMB)",
+    "SiteName": "222223",
+    "Groups": [
+      {
+        "ProductId": 21,
+        "CurrencyId": 13,
+        "SiteId": 23,
+        "GroupId": 9,
+        "GroupName": "Allbet Casino",
+        "OrangeMaxWinLimit": 100000,
+        "YellowMaxWinLimit": 300000,
+        "RedMaxWinLimit": 500000,
+        "IsBlockedPlacebetRedLevel": false,
+        "IsBlockedTransferRedLevel": false,
+        "IsCreditSite": true
+      },
+      {
+        "ProductId": 21,
+        "CurrencyId": 13,
+        "SiteId": 23,
+        "GroupId": 8,
+        "GroupName": "Allbet Casino VIP",
+        "OrangeMaxWinLimit": 200000,
+        "YellowMaxWinLimit": 500000,
+        "RedMaxWinLimit": 800000,
+        "IsBlockedPlacebetRedLevel": false,
+        "IsBlockedTransferRedLevel": false,
+        "IsCreditSite": true
+      }
+    ]
+  },
+  {
+    "ProductName": "Allbet",
+    "CurrencyName": "CNY (RMB)",
+    "SiteName": "222225",
+    "Groups": [
+      {
+        "ProductId": 21,
+        "CurrencyId": 13,
+        "SiteId": 24,
+        "GroupId": 9,
+        "GroupName": "Allbet Casino",
+        "OrangeMaxWinLimit": 100000,
+        "YellowMaxWinLimit": 300000,
+        "RedMaxWinLimit": 500000,
+        "IsBlockedPlacebetRedLevel": false,
+        "IsBlockedTransferRedLevel": false,
+        "IsCreditSite": true
+      },
+      {
+        "ProductId": 21,
+        "CurrencyId": 13,
+        "SiteId": 24,
+        "GroupId": 8,
+        "GroupName": "Allbet Casino VIP",
+        "OrangeMaxWinLimit": 200000,
+        "YellowMaxWinLimit": 500000,
+        "RedMaxWinLimit": 800000,
+        "IsBlockedPlacebetRedLevel": false,
+        "IsBlockedTransferRedLevel": false,
+        "IsCreditSite": true
+      }
+    ]
+  },
+  {
+    "ProductName": "Allbet",
+    "CurrencyName": "CNY (RMB)",
+    "SiteName": "222227",
+    "Groups": [
+      {
+        "ProductId": 21,
+        "CurrencyId": 13,
+        "SiteId": 25,
+        "GroupId": 9,
+        "GroupName": "Allbet Casino",
+        "OrangeMaxWinLimit": 100000,
+        "YellowMaxWinLimit": 300000,
+        "RedMaxWinLimit": 500000,
+        "IsBlockedPlacebetRedLevel": false,
+        "IsBlockedTransferRedLevel": false,
+        "IsCreditSite": true
+      },
+      {
+        "ProductId": 21,
+        "CurrencyId": 13,
+        "SiteId": 25,
+        "GroupId": 8,
+        "GroupName": "Allbet Casino VIP",
+        "OrangeMaxWinLimit": 200000,
+        "YellowMaxWinLimit": 500000,
+        "RedMaxWinLimit": 800000,
+        "IsBlockedPlacebetRedLevel": false,
+        "IsBlockedTransferRedLevel": false,
+        "IsCreditSite": true
+      }
+    ]
+  },
+  {
+    "ProductName": "Allbet",
+    "CurrencyName": "CNY (RMB)",
+    "SiteName": "611111",
+    "Groups": [
+      {
+        "ProductId": 21,
+        "CurrencyId": 13,
+        "SiteId": 16,
+        "GroupId": 9,
+        "GroupName": "Allbet Casino",
+        "OrangeMaxWinLimit": 100000,
+        "YellowMaxWinLimit": 300000,
+        "RedMaxWinLimit": 500000,
+        "IsBlockedPlacebetRedLevel": false,
+        "IsBlockedTransferRedLevel": false,
+        "IsCreditSite": true
+      },
+      {
+        "ProductId": 21,
+        "CurrencyId": 13,
+        "SiteId": 16,
+        "GroupId": 8,
+        "GroupName": "Allbet Casino VIP",
+        "OrangeMaxWinLimit": 200000,
+        "YellowMaxWinLimit": 500000,
+        "RedMaxWinLimit": 800000,
+        "IsBlockedPlacebetRedLevel": false,
+        "IsBlockedTransferRedLevel": false,
+        "IsCreditSite": true
+      }
+    ]
+  },
+  {
+    "ProductName": "Allbet",
+    "CurrencyName": "CNY (RMB)",
+    "SiteName": "722222",
+    "Groups": [
+      {
+        "ProductId": 21,
+        "CurrencyId": 13,
+        "SiteId": 20,
+        "GroupId": 9,
+        "GroupName": "Allbet Casino",
+        "OrangeMaxWinLimit": 100000,
+        "YellowMaxWinLimit": 300000,
+        "RedMaxWinLimit": 500000,
+        "IsBlockedPlacebetRedLevel": false,
+        "IsBlockedTransferRedLevel": false,
+        "IsCreditSite": true
+      },
+      {
+        "ProductId": 21,
+        "CurrencyId": 13,
+        "SiteId": 20,
+        "GroupId": 8,
+        "GroupName": "Allbet Casino VIP",
+        "OrangeMaxWinLimit": 200000,
+        "YellowMaxWinLimit": 500000,
+        "RedMaxWinLimit": 800000,
+        "IsBlockedPlacebetRedLevel": false,
+        "IsBlockedTransferRedLevel": false,
+        "IsCreditSite": true
+      }
+    ]
+  },
+  {
+    "ProductName": "Allbet",
+    "CurrencyName": "CNY (RMB)",
+    "SiteName": "733333",
+    "Groups": [
+      {
+        "ProductId": 21,
+        "CurrencyId": 13,
+        "SiteId": 21,
+        "GroupId": 9,
+        "GroupName": "Allbet Casino",
+        "OrangeMaxWinLimit": 100000,
+        "YellowMaxWinLimit": 300000,
+        "RedMaxWinLimit": 500000,
+        "IsBlockedPlacebetRedLevel": false,
+        "IsBlockedTransferRedLevel": false,
+        "IsCreditSite": true
+      },
+      {
+        "ProductId": 21,
+        "CurrencyId": 13,
+        "SiteId": 21,
+        "GroupId": 8,
+        "GroupName": "Allbet Casino VIP",
+        "OrangeMaxWinLimit": 200000,
+        "YellowMaxWinLimit": 500000,
+        "RedMaxWinLimit": 800000,
+        "IsBlockedPlacebetRedLevel": false,
+        "IsBlockedTransferRedLevel": false,
+        "IsCreditSite": true
+      }
+    ]
+  },
+  {
+    "ProductName": "Allbet",
+    "CurrencyName": "CNY (RMB)",
+    "SiteName": "755555",
+    "Groups": [
+      {
+        "ProductId": 21,
+        "CurrencyId": 13,
+        "SiteId": 22,
+        "GroupId": 9,
+        "GroupName": "Allbet Casino",
+        "OrangeMaxWinLimit": 100000,
+        "YellowMaxWinLimit": 300000,
+        "RedMaxWinLimit": 500000,
+        "IsBlockedPlacebetRedLevel": false,
+        "IsBlockedTransferRedLevel": false,
+        "IsCreditSite": true
+      },
+      {
+        "ProductId": 21,
+        "CurrencyId": 13,
+        "SiteId": 22,
+        "GroupId": 8,
+        "GroupName": "Allbet Casino VIP",
+        "OrangeMaxWinLimit": 200000,
+        "YellowMaxWinLimit": 500000,
+        "RedMaxWinLimit": 800000,
+        "IsBlockedPlacebetRedLevel": false,
+        "IsBlockedTransferRedLevel": false,
+        "IsCreditSite": true
+      }
+    ]
+  },
+  {
+    "ProductName": "Allbet",
+    "CurrencyName": "CNY (RMB)",
+    "SiteName": "766666",
+    "Groups": [
+      {
+        "ProductId": 21,
+        "CurrencyId": 13,
+        "SiteId": 184,
+        "GroupId": 9,
+        "GroupName": "Allbet Casino",
+        "OrangeMaxWinLimit": 100000,
+        "YellowMaxWinLimit": 300000,
+        "RedMaxWinLimit": 500000,
+        "IsBlockedPlacebetRedLevel": false,
+        "IsBlockedTransferRedLevel": false,
+        "IsCreditSite": true
+      },
+      {
+        "ProductId": 21,
+        "CurrencyId": 13,
+        "SiteId": 184,
+        "GroupId": 8,
+        "GroupName": "Allbet Casino VIP",
+        "OrangeMaxWinLimit": 200000,
+        "YellowMaxWinLimit": 500000,
+        "RedMaxWinLimit": 800000,
+        "IsBlockedPlacebetRedLevel": false,
+        "IsBlockedTransferRedLevel": false,
+        "IsCreditSite": true
+      }
+    ]
+  },
+  {
+    "ProductName": "Allbet",
+    "CurrencyName": "CNY (RMB)",
+    "SiteName": "789y",
+    "Groups": [
+      {
+        "ProductId": 21,
+        "CurrencyId": 13,
+        "SiteId": 3,
+        "GroupId": 9,
+        "GroupName": "Allbet Casino",
+        "OrangeMaxWinLimit": 100000,
+        "YellowMaxWinLimit": 300000,
+        "RedMaxWinLimit": 500000,
+        "IsBlockedPlacebetRedLevel": false,
+        "IsBlockedTransferRedLevel": false,
+        "IsCreditSite": true
+      },
+      {
+        "ProductId": 21,
+        "CurrencyId": 13,
+        "SiteId": 3,
+        "GroupId": 8,
+        "GroupName": "Allbet Casino VIP",
+        "OrangeMaxWinLimit": 200000,
+        "YellowMaxWinLimit": 500000,
+        "RedMaxWinLimit": 800000,
+        "IsBlockedPlacebetRedLevel": false,
+        "IsBlockedTransferRedLevel": false,
+        "IsCreditSite": true
+      }
+    ]
+  },
+  {
+    "ProductName": "Allbet",
+    "CurrencyName": "CNY (RMB)",
+    "SiteName": "7aa666",
+    "Groups": [
+      {
+        "ProductId": 21,
+        "CurrencyId": 13,
+        "SiteId": 188,
+        "GroupId": 9,
+        "GroupName": "Allbet Casino",
+        "OrangeMaxWinLimit": 100000,
+        "YellowMaxWinLimit": 300000,
+        "RedMaxWinLimit": 500000,
+        "IsBlockedPlacebetRedLevel": false,
+        "IsBlockedTransferRedLevel": false,
+        "IsCreditSite": true
+      },
+      {
+        "ProductId": 21,
+        "CurrencyId": 13,
+        "SiteId": 188,
+        "GroupId": 8,
+        "GroupName": "Allbet Casino VIP",
+        "OrangeMaxWinLimit": 200000,
+        "YellowMaxWinLimit": 500000,
+        "RedMaxWinLimit": 800000,
+        "IsBlockedPlacebetRedLevel": false,
+        "IsBlockedTransferRedLevel": false,
+        "IsCreditSite": true
+      }
+    ]
+  },
+  {
+    "ProductName": "Allbet",
+    "CurrencyName": "CNY (RMB)",
+    "SiteName": "Aoncash",
+    "Groups": [
+      {
+        "ProductId": 21,
+        "CurrencyId": 13,
+        "SiteId": 56,
+        "GroupId": 9,
+        "GroupName": "Allbet Casino",
+        "OrangeMaxWinLimit": 100000,
+        "YellowMaxWinLimit": 300000,
+        "RedMaxWinLimit": 500000,
+        "IsBlockedPlacebetRedLevel": false,
+        "IsBlockedTransferRedLevel": false,
+        "IsCreditSite": false
+      },
+      {
+        "ProductId": 21,
+        "CurrencyId": 13,
+        "SiteId": 56,
+        "GroupId": 8,
+        "GroupName": "Allbet Casino VIP",
+        "OrangeMaxWinLimit": 200000,
+        "YellowMaxWinLimit": 500000,
+        "RedMaxWinLimit": 800000,
+        "IsBlockedPlacebetRedLevel": false,
+        "IsBlockedTransferRedLevel": false,
+        "IsCreditSite": false
+      }
+    ]
+  },
+  {
+    "ProductName": "Allbet",
+    "CurrencyName": "CNY (RMB)",
+    "SiteName": "BEST-ODDS",
+    "Groups": [
+      {
+        "ProductId": 21,
+        "CurrencyId": 13,
+        "SiteId": 1,
+        "GroupId": 9,
+        "GroupName": "Allbet Casino",
+        "OrangeMaxWinLimit": 100000,
+        "YellowMaxWinLimit": 300000,
+        "RedMaxWinLimit": 500000,
+        "IsBlockedPlacebetRedLevel": false,
+        "IsBlockedTransferRedLevel": false,
+        "IsCreditSite": true
+      },
+      {
+        "ProductId": 21,
+        "CurrencyId": 13,
+        "SiteId": 1,
+        "GroupId": 8,
+        "GroupName": "Allbet Casino VIP",
+        "OrangeMaxWinLimit": 200000,
+        "YellowMaxWinLimit": 500000,
+        "RedMaxWinLimit": 800000,
+        "IsBlockedPlacebetRedLevel": false,
+        "IsBlockedTransferRedLevel": false,
+        "IsCreditSite": true
+      }
+    ]
+  },
+  {
+    "ProductName": "Allbet",
+    "CurrencyName": "CNY (RMB)",
+    "SiteName": "Emmyo",
+    "Groups": [
+      {
+        "ProductId": 21,
+        "CurrencyId": 13,
+        "SiteId": 206,
+        "GroupId": 9,
+        "GroupName": "Allbet Casino",
+        "OrangeMaxWinLimit": 100000,
+        "YellowMaxWinLimit": 300000,
+        "RedMaxWinLimit": 500000,
+        "IsBlockedPlacebetRedLevel": false,
+        "IsBlockedTransferRedLevel": false,
+        "IsCreditSite": false
+      },
+      {
+        "ProductId": 21,
+        "CurrencyId": 13,
+        "SiteId": 206,
+        "GroupId": 8,
+        "GroupName": "Allbet Casino VIP",
+        "OrangeMaxWinLimit": 200000,
+        "YellowMaxWinLimit": 500000,
+        "RedMaxWinLimit": 800000,
+        "IsBlockedPlacebetRedLevel": false,
+        "IsBlockedTransferRedLevel": false,
+        "IsCreditSite": false
+      }
+    ]
+  },
+  {
+    "ProductName": "Allbet",
+    "CurrencyName": "CNY (RMB)",
+    "SiteName": "IMBC",
+    "Groups": [
+      {
+        "ProductId": 21,
+        "CurrencyId": 13,
+        "SiteId": 147,
+        "GroupId": 9,
+        "GroupName": "Allbet Casino",
+        "OrangeMaxWinLimit": 100000,
+        "YellowMaxWinLimit": 300000,
+        "RedMaxWinLimit": 500000,
+        "IsBlockedPlacebetRedLevel": false,
+        "IsBlockedTransferRedLevel": false,
+        "IsCreditSite": true
+      },
+      {
+        "ProductId": 21,
+        "CurrencyId": 13,
+        "SiteId": 147,
+        "GroupId": 8,
+        "GroupName": "Allbet Casino VIP",
+        "OrangeMaxWinLimit": 200000,
+        "YellowMaxWinLimit": 500000,
+        "RedMaxWinLimit": 800000,
+        "IsBlockedPlacebetRedLevel": false,
+        "IsBlockedTransferRedLevel": false,
+        "IsCreditSite": true
+      }
+    ]
+  },
+  {
+    "ProductName": "Allbet",
+    "CurrencyName": "CNY (RMB)",
+    "SiteName": "INDO",
+    "Groups": [
+      {
+        "ProductId": 21,
+        "CurrencyId": 13,
+        "SiteId": 11,
+        "GroupId": 9,
+        "GroupName": "Allbet Casino",
+        "OrangeMaxWinLimit": 100000,
+        "YellowMaxWinLimit": 300000,
+        "RedMaxWinLimit": 500000,
+        "IsBlockedPlacebetRedLevel": false,
+        "IsBlockedTransferRedLevel": false,
+        "IsCreditSite": true
+      },
+      {
+        "ProductId": 21,
+        "CurrencyId": 13,
+        "SiteId": 11,
+        "GroupId": 8,
+        "GroupName": "Allbet Casino VIP",
+        "OrangeMaxWinLimit": 200000,
+        "YellowMaxWinLimit": 500000,
+        "RedMaxWinLimit": 800000,
+        "IsBlockedPlacebetRedLevel": false,
+        "IsBlockedTransferRedLevel": false,
+        "IsCreditSite": true
+      }
+    ]
+  },
+  {
+    "ProductName": "Allbet",
+    "CurrencyName": "CNY (RMB)",
+    "SiteName": "JPNIBC",
+    "Groups": [
+      {
+        "ProductId": 21,
+        "CurrencyId": 13,
+        "SiteId": 109,
+        "GroupId": 9,
+        "GroupName": "Allbet Casino",
+        "OrangeMaxWinLimit": 100000,
+        "YellowMaxWinLimit": 300000,
+        "RedMaxWinLimit": 500000,
+        "IsBlockedPlacebetRedLevel": false,
+        "IsBlockedTransferRedLevel": false,
+        "IsCreditSite": true
+      },
+      {
+        "ProductId": 21,
+        "CurrencyId": 13,
+        "SiteId": 109,
+        "GroupId": 8,
+        "GroupName": "Allbet Casino VIP",
+        "OrangeMaxWinLimit": 200000,
+        "YellowMaxWinLimit": 500000,
+        "RedMaxWinLimit": 800000,
+        "IsBlockedPlacebetRedLevel": false,
+        "IsBlockedTransferRedLevel": false,
+        "IsCreditSite": true
+      }
+    ]
+  },
+  {
+    "ProductName": "Allbet",
+    "CurrencyName": "CNY (RMB)",
+    "SiteName": "KORIBC",
+    "Groups": [
+      {
+        "ProductId": 21,
+        "CurrencyId": 13,
+        "SiteId": 35,
+        "GroupId": 9,
+        "GroupName": "Allbet Casino",
+        "OrangeMaxWinLimit": 100000,
+        "YellowMaxWinLimit": 300000,
+        "RedMaxWinLimit": 500000,
+        "IsBlockedPlacebetRedLevel": false,
+        "IsBlockedTransferRedLevel": false,
+        "IsCreditSite": true
+      },
+      {
+        "ProductId": 21,
+        "CurrencyId": 13,
+        "SiteId": 35,
+        "GroupId": 8,
+        "GroupName": "Allbet Casino VIP",
+        "OrangeMaxWinLimit": 200000,
+        "YellowMaxWinLimit": 500000,
+        "RedMaxWinLimit": 800000,
+        "IsBlockedPlacebetRedLevel": false,
+        "IsBlockedTransferRedLevel": false,
+        "IsCreditSite": true
+      }
+    ]
+  },
+  {
+    "ProductName": "Allbet",
+    "CurrencyName": "CNY (RMB)",
+    "SiteName": "NBCbet",
+    "Groups": [
+      {
+        "ProductId": 21,
+        "CurrencyId": 13,
+        "SiteId": 158,
+        "GroupId": 9,
+        "GroupName": "Allbet Casino",
+        "OrangeMaxWinLimit": 100000,
+        "YellowMaxWinLimit": 300000,
+        "RedMaxWinLimit": 500000,
+        "IsBlockedPlacebetRedLevel": false,
+        "IsBlockedTransferRedLevel": false,
+        "IsCreditSite": false
+      },
+      {
+        "ProductId": 21,
+        "CurrencyId": 13,
+        "SiteId": 158,
+        "GroupId": 8,
+        "GroupName": "Allbet Casino VIP",
+        "OrangeMaxWinLimit": 200000,
+        "YellowMaxWinLimit": 500000,
+        "RedMaxWinLimit": 800000,
+        "IsBlockedPlacebetRedLevel": false,
+        "IsBlockedTransferRedLevel": false,
+        "IsCreditSite": false
+      }
+    ]
+  },
+  {
+    "ProductName": "Allbet",
+    "CurrencyName": "CNY (RMB)",
+    "SiteName": "spotico",
+    "Groups": [
+      {
+        "ProductId": 21,
+        "CurrencyId": 13,
+        "SiteId": 29,
+        "GroupId": 9,
+        "GroupName": "Allbet Casino",
+        "OrangeMaxWinLimit": 100000,
+        "YellowMaxWinLimit": 300000,
+        "RedMaxWinLimit": 500000,
+        "IsBlockedPlacebetRedLevel": false,
+        "IsBlockedTransferRedLevel": false,
+        "IsCreditSite": true
+      },
+      {
+        "ProductId": 21,
+        "CurrencyId": 13,
+        "SiteId": 29,
+        "GroupId": 8,
+        "GroupName": "Allbet Casino VIP",
+        "OrangeMaxWinLimit": 200000,
+        "YellowMaxWinLimit": 500000,
+        "RedMaxWinLimit": 800000,
+        "IsBlockedPlacebetRedLevel": false,
+        "IsBlockedTransferRedLevel": false,
+        "IsCreditSite": true
+      }
+    ]
+  },
+  {
+    "ProductName": "Allbet",
+    "CurrencyName": "CNY (RMB)",
+    "SiteName": "SunGame",
+    "Groups": [
+      {
+        "ProductId": 21,
+        "CurrencyId": 13,
+        "SiteId": 40,
+        "GroupId": 9,
+        "GroupName": "Allbet Casino",
+        "OrangeMaxWinLimit": 100000,
+        "YellowMaxWinLimit": 300000,
+        "RedMaxWinLimit": 500000,
+        "IsBlockedPlacebetRedLevel": false,
+        "IsBlockedTransferRedLevel": false,
+        "IsCreditSite": false
+      },
+      {
+        "ProductId": 21,
+        "CurrencyId": 13,
+        "SiteId": 40,
+        "GroupId": 8,
+        "GroupName": "Allbet Casino VIP",
+        "OrangeMaxWinLimit": 200000,
+        "YellowMaxWinLimit": 500000,
+        "RedMaxWinLimit": 800000,
+        "IsBlockedPlacebetRedLevel": false,
+        "IsBlockedTransferRedLevel": false,
+        "IsCreditSite": false
+      }
+    ]
+  },
+  {
+    "ProductName": "Allbet",
+    "CurrencyName": "CNY (RMB)",
+    "SiteName": "XYZBET",
+    "Groups": [
+      {
+        "ProductId": 21,
+        "CurrencyId": 13,
+        "SiteId": 13,
+        "GroupId": 9,
+        "GroupName": "Allbet Casino",
+        "OrangeMaxWinLimit": 100000,
+        "YellowMaxWinLimit": 300000,
+        "RedMaxWinLimit": 500000,
+        "IsBlockedPlacebetRedLevel": false,
+        "IsBlockedTransferRedLevel": false,
+        "IsCreditSite": true
+      },
+      {
+        "ProductId": 21,
+        "CurrencyId": 13,
+        "SiteId": 13,
+        "GroupId": 8,
+        "GroupName": "Allbet Casino VIP",
+        "OrangeMaxWinLimit": 200000,
+        "YellowMaxWinLimit": 500000,
+        "RedMaxWinLimit": 800000,
+        "IsBlockedPlacebetRedLevel": false,
+        "IsBlockedTransferRedLevel": false,
+        "IsCreditSite": true
+      }
+    ]
+  }
+]

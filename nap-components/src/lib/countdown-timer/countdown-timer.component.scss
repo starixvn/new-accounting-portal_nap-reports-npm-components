@@ -1,0 +1,36 @@
+@import '~nap-theme/scss/variables';
+:host {
+    border: 1px solid #7c98a4;
+    cursor: pointer;
+    .second {
+        display: inline-block;
+        padding: 0 3px;
+        min-width: 80px;
+        text-align: center;
+    }
+    .countdown-dropdown {
+        display: inline-block;
+        border-left: 1px solid #7c98a4;
+        padding: 0 3px;
+    }
+    .countdown-intervals {
+        background: #fff;
+        position: absolute;
+        z-index: $zindex-dropdown;
+        float: left;
+        border: 1px solid #d4d4d4;
+        padding: 2px 0;
+        div {
+            padding: 2px 10px;
+            .fa-circle {
+                visibility: hidden;
+                font-size: 5px;
+                vertical-align: middle;
+                margin-right: 5px;
+                &.countdown-selected {
+                    visibility: visible;
+                }
+            }
+        }
+    }
+}

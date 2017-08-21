@@ -1,0 +1,11 @@
+.breadcrumb-container {
+    background: -webkit-linear-gradient(#ffcc33, #ffcc35);
+    display: flex;
+    margin-bottom: .1rem;
+    .breadcrumb {
+        margin-right: auto;
+        margin-bottom: 0;
+        font-weight: bold;
+        background-color: transparent;
+    }
+}

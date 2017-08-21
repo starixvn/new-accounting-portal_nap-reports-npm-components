@@ -1,0 +1,93 @@
+@import 'variables';
+
+/* bootstrap */
+
+select,
+button {
+    cursor: pointer;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+    font-family: $font-family-base;
+}
+
+ul {
+    margin-bottom: 0;
+}
+
+input[placeholder] {
+    &::-webkit-input-placeholder {
+        font-style: italic;
+    }
+    &::-moz-placeholder {
+        font-style: italic;
+    }
+    &:-ms-input-placeholder {
+        font-style: italic;
+    }
+}
+
+.col-form-label {
+    padding-top: .2rem;
+    padding-bottom: .2rem;
+}
+
+button.btn.dropdown-toggle {
+    padding-left: .6rem;
+    padding-right: .6rem;
+    &::after {
+        margin-top: .4rem !important;
+    }
+}
+
+.modal-dialog {
+    .modal-header {
+        background: linear-gradient(#486cb8, #5a7dc1) #5a7dc1;
+        color: #fff;
+        font-weight: bold;
+        button.close {
+            color: #fff;
+            font-weight: normal;
+            opacity: 1;
+        }
+    }
+}
+
+
+/* bootstrap */
+
+
+/* ngx-treeview */
+
+.treeview-header {
+    .divider {
+        margin: ($spacer-y / 2) 0 !important;
+    }
+}
+
+
+/* ngx-treeview */
+
+
+/* others */
+
+body {
+    padding-top: 2.5rem;
+}
+
+.nap-link {
+    color: $link-color;
+    text-decoration: $link-decoration;
+    cursor: pointer;
+    @include hover-focus {
+        color: $link-hover-color;
+        text-decoration: $link-hover-decoration;
+    }
+}
+
+
+/* others */

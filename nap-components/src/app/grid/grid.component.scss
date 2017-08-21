@@ -1,0 +1,35 @@
+@import '~nap-theme/scss/breadcrumb';
+@import '~nap-theme/scss/grid';
+.breadcrumb-toolbox {
+    .toolbox-item {
+        nap-countdown-timer {
+            display: block;
+            background: #fff;
+        }
+        .fa-file-excel-o {
+            font-size: 1rem;
+        }
+    }
+}
+
+.input-win-limit {
+    display: inline-block;
+    width: auto;
+    margin-right: 5px;
+}
+
+.width-120px {
+    width: 120px;
+}
+
+.text-orange {
+    color: orange;
+}
+
+.text-yellow {
+    color: yellow;
+}
+
+.text-red {
+    color: red;
+}

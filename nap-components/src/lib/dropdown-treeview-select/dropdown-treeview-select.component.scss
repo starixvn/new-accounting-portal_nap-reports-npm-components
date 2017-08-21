@@ -1,0 +1,17 @@
+label {
+    margin-bottom: 0;
+    cursor: pointer;
+    &.label-group {
+        font-weight: bold;
+    }
+    &.label-item {
+        &:hover {
+            font-weight: bold;
+            color: #0062ad;
+        }
+    }
+}
+
+.dropdown-divider {
+    background-color: #000;
+}

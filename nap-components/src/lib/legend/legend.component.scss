@@ -1,0 +1,12 @@
+:host {
+    display: block;
+    position: relative;
+    height: 0;
+    .legend-icon {
+        position: absolute;
+        right: 0;
+        font-size: 1.2em;
+        cursor: help;
+        color: #3c5b9b;
+    }
+}

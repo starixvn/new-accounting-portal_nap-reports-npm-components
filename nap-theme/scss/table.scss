@@ -1,0 +1,43 @@
+table {
+    background-color: #fff;
+    font-size: 0.725rem;
+    td,
+    th {
+        border: 1px solid #c5c5c5;
+        padding: .3rem;
+    }
+    thead {
+        th {
+            background-color: #3c5ea5;
+            color: #fff;
+            text-align: center;
+        }
+        td {
+            color: #3c5ea5;
+        }
+    }
+    &.table-striped {
+        tbody tr {
+            background-color: #fff;
+            &:nth-of-type(even) {
+                background-color: #E4F2FD;
+            }
+            &:hover {
+                background-color: #E2FFFF;
+            }
+        }
+    }
+    .no-data {
+        color: red;
+        background: #fff;
+    }
+    .date {
+        text-align: center;
+    }
+    .number {
+        text-align: right;
+    }
+    .word-break-all {
+        word-break: break-all;
+    }
+}

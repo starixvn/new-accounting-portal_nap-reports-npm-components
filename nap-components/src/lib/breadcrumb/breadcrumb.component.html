@@ -1,0 +1,9 @@
+<div class="breadcrumb-container">
+    <ol class="breadcrumb">
+        <li *ngFor="let item of items; let index = index; let isLast = last" class="breadcrumb-item" [class.active]="isLast" [ngSwitch]="isLast">
+            <span *ngSwitchCase="false" class="nap-link" (click)="onItemClick(index)">{{item}}</span>
+            <span *ngSwitchCase="true">{{item}}</span>
+        </li>
+    </ol>
+    <ng-template [ngTemplateOutlet]="toolboxTemplate"></ng-template>
+</div>

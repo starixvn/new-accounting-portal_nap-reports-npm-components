@@ -1,0 +1,175 @@
+<ng-template #breadcrumbToolboxTemplate1>
+    <div class="breadcrumb-toolbox">
+        <div class="toolbox-item">
+            <nap-countdown-timer (callback)="countdownCallback()"></nap-countdown-timer>
+        </div>
+        <div class="toolbox-item">
+            <span (click)="addPlayer()">Add Player <i class="fa fa-plus-circle" aria-hidden="true"></i></span>
+        </div>
+        <div class="toolbox-item">
+            <i class="fa fa-file-excel-o" aria-hidden="true" title="Export excel" (click)="exportExcel()"></i>
+        </div>
+    </div>
+</ng-template>
+<ng-template #breadcrumbToolboxTemplate2>
+    <div class="breadcrumb-toolbox">
+        <div class="toolbox-item">
+            <div class="toolbox-item-text" (click)="addPlayer()">Add Player <i class="fa fa-plus-circle" aria-hidden="true"></i></div>
+        </div>
+    </div>
+</ng-template>
+<ng-template #colgroup>
+    <colgroup>
+        <col style="width: 50px" />
+        <col style="width: 100px" />
+        <col style="width: 100px" />
+        <col style="width: 160px" />
+        <col style="width: 220px" />
+        <col style="width: 220px" />
+        <col style="width: 220px" />
+        <col style="width: 100px" />
+        <col style="width: 130px" />
+    </colgroup>
+</ng-template>
+<div *ngIf="productSettings">
+    <div class="grid">
+        <div style="width: 1318px">
+            <nap-breadcrumb [items]="breadcrumbItems" (itemClick)="onBreadcrumbItemClick($event)" [toolboxTemplate]="breadcrumbToolboxTemplate1"></nap-breadcrumb>
+            <nap-breadcrumb [toolboxTemplate]="breadcrumbToolboxTemplate2"></nap-breadcrumb>
+            <div class="header">
+                <table [class.empty-data]="productSettings.length === 0">
+                    <ng-template [ngTemplateOutlet]="colgroup"></ng-template>
+                    <thead>
+                        <tr>
+                            <th rowspan="3">#</th>
+                            <th rowspan="3">Site</th>
+                            <th rowspan="3">Currency</th>
+                            <th rowspan="3">Group</th>
+                            <th colspan="5">Currency Win Limit</th>
+                        </tr>
+                        <tr>
+                            <th>Orange level <i class="fa fa-flag text-orange" aria-hidden="true"></i></th>
+                            <th>Yellow level <i class="fa fa-flag text-yellow" aria-hidden="true"></i></th>
+                            <th colspan="3">Red level <i class="fa fa-flag text-red" aria-hidden="true"></i></th>
+                        </tr>
+                        <tr>
+                            <th>
+                                Win Limit (RM)
+                                <div class="d-inline-block">
+                                    <ngx-numeric-textbox [(ngModel)]="orangeWinLimit" class="input-win-limit width-120px"></ngx-numeric-textbox>
+                                    <button type="button" class="btn btn-secondary" (click)="applyOrangeWinLimit()">Apply</button>
+                                </div>
+                            </th>
+                            <th>
+                                Win Limit (RM)
+                                <div class="d-inline-block">
+                                    <ngx-numeric-textbox [(ngModel)]="yellowWinLimit" class="input-win-limit width-120px">
+                                    </ngx-numeric-textbox>
+                                    <button type="button" class="btn btn-secondary" (click)="applyYellowWinLimit()">Apply</button>
+                                </div>
+                            </th>
+                            <th>
+                                Win Limit (RM)
+                                <div class="d-inline-block">
+                                    <ngx-numeric-textbox [(ngModel)]="redWinLimit" class="input-win-limit width-120px">
+                                    </ngx-numeric-textbox>
+                                    <button type="button" class="btn btn-secondary" (click)="applyRedWinLimit()">Apply</button>
+                                </div>
+                            </th>
+                            <th>
+                                Allow Block Place Bet
+                                <div class="form-check">
+                                    <label class="form-check-label">
+                                <input type="checkbox" class="form-check-input" [(ngModel)]="isBlockedPlacebetRedLevel" (ngModelChange)="applyRedBlockPlacebet()">
+                            </label>
+                                </div>
+                            </th>
+                            <th>
+                                Allow Block Transfer/Withdraw
+                                <div class="form-check">
+                                    <label class="form-check-label">
+                                    <input type="checkbox" class="form-check-input" [(ngModel)]="isBlockedTransferRedLevel" (ngModelChange)="applyRedBlockTransfer()">
+                                </label>
+                                </div>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody *ngIf="productSettings.length === 0">
+                        <tr>
+                            <th colspan="9">
+                                There is no data
+                            </th>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div *ngIf="productSettings.length > 0" class="body">
+                <table class="table-striped stretch">
+                    <ng-template [ngTemplateOutlet]="colgroup"></ng-template>
+                    <tbody>
+                        <ng-template *ngIf="productSettings.length > 0" ngFor let-setting [ngForOf]="displayedProductSettings" let-i="index">
+                            <ng-template ngFor let-group [ngForOf]="setting.Groups" let-isFirst="first">
+                                <tr>
+                                    <td *ngIf="isFirst" class="text-center" [attr.rowspan]="setting.Groups.length">
+                                        {{ paginationInstance.itemsPerPage * (paginationInstance.currentPage - 1) + i + 1 }}
+                                    </td>
+                                    <td *ngIf="isFirst" [attr.rowspan]="setting.Groups.length">{{ setting.SiteName }}</td>
+                                    <td *ngIf="isFirst" [attr.rowspan]="setting.Groups.length">{{ setting.CurrencyName }}</td>
+                                    <td><a (click)="showGroupSetting(setting.ProductName)" href="#"> {{ group.GroupName }}</a></td>
+                                    <td class="text-center">
+                                        <ngx-numeric-textbox class="input-win-limit" [class.text-danger]="group.OrangeMaxWinLimit === 0" [(ngModel)]="group.OrangeMaxWinLimit">
+                                        </ngx-numeric-textbox>
+                                        <span>(RM)</span>
+                                    </td>
+                                    <td class="text-center">
+                                        <ngx-numeric-textbox class="input-win-limit" [class.text-danger]="group.YellowMaxWinLimit === 0" [(ngModel)]="group.YellowMaxWinLimit">
+                                        </ngx-numeric-textbox>
+                                        <span>(RM)</span>
+                                    </td>
+                                    <td class="text-center">
+                                        <ngx-numeric-textbox class="input-win-limit" [class.text-danger]="group.RedMaxWinLimit === 0" [(ngModel)]="group.RedMaxWinLimit">
+                                        </ngx-numeric-textbox>
+                                        <span>(RM)</span>
+                                    </td>
+                                    <td class="text-center">
+                                        <label class="form-check-label">
+                                        <input type="checkbox" class="form-check-input" [(ngModel)]="group.IsBlockedPlacebetRedLevel" (ngModelChange)="onIsBlockedPlacebetRedLevelChange()">
+                                    </label>
+                                    </td>
+                                    <td class="text-center">
+                                        <label class="form-check-label">
+                                        <input type="checkbox" class="form-check-input" [(ngModel)]="group.IsBlockedTransferRedLevel" [disabled]="group.IsCreditSite" (ngModelChange)="onIsBlockedTransferRedLevelChange()">
+                                    </label>
+                                    </td>
+                                </tr>
+                            </ng-template>
+                        </ng-template>
+                    </tbody>
+                </table>
+            </div>
+            <div *ngIf="productSettings.length > 0" class="footer stretch">
+                <table>
+                    <ng-template [ngTemplateOutlet]="colgroup"></ng-template>
+                    <tfoot>
+                        <tr>
+                            <td colspan="9">
+                                <nap-pagination [config]="paginationInstance" (pageChange)="onPageChange($event)"></nap-pagination>
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="productSettings.length > 0">
+        <nap-note>
+            <span class="text-danger">- Win Limit = 0: Unlimited.</span>
+        </nap-note>
+        <button type="button" class="btn btn-primary" (click)="save()">
+            Save
+        </button>
+        <button type="button" class="btn btn-danger" (click)="cancel()">
+            Cancel
+        </button>
+    </div>
+</div>

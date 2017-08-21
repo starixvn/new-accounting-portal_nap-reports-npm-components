@@ -1,0 +1,12 @@
+.breadcrumb-toolbox {
+    display: flex;
+    align-items: center;
+    padding: 0.2rem 0.4rem;
+    .toolbox-item {
+        cursor: pointer;
+        margin-left: 5px;
+        .fa {
+            vertical-align: middle;
+        }
+    }
+}
