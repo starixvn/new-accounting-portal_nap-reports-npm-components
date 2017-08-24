@@ -1,4 +1,4 @@
-﻿import { Component, ViewChild, ElementRef, OnInit } from '@angular/core';
+﻿import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ToastService } from './toast.service';
 import { MessageType } from './toast.model';
 
@@ -7,10 +7,10 @@ import { MessageType } from './toast.model';
     templateUrl: './toast.component.html'
 })
 
-export class ToastComponent implements OnInit {
+export class ToastComponent implements OnInit, OnDestroy {
     message: string;
     type = MessageType.Danger;
-    @ViewChild('toast') toast: ElementRef;
+    private timer: NodeJS.Timer;
 
     constructor(
         private toastService: ToastService
@@ -19,6 +19,10 @@ export class ToastComponent implements OnInit {
     ngOnInit() {
         this.toastService.activate = this.activate.bind(this);
         this.toastService.deactivate = this.deactivate.bind(this);
+    }
+
+    ngOnDestroy() {
+        this.clearTimer();
     }
 
     close() {
@@ -38,12 +42,25 @@ export class ToastComponent implements OnInit {
         }
     }
 
-    private activate(message: string, type: MessageType = MessageType.Danger): void {
+    private activate(message: string, type: MessageType = MessageType.Danger, autoCloseAfterSeconds: number = undefined): void {
+        this.clearTimer();
         this.message = message;
         this.type = type;
+        if (autoCloseAfterSeconds) {
+            this.timer = setTimeout(() => {
+                this.close();
+            }, autoCloseAfterSeconds * 1000);
+        }
     }
 
     private deactivate(): void {
         this.close();
+    }
+
+    private clearTimer() {
+        if (this.timer) {
+            clearTimeout(this.timer);
+            this.timer = undefined;
+        }
     }
 }

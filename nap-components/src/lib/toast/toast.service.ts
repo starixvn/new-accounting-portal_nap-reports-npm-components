@@ -3,7 +3,7 @@ import { MessageType } from './toast.model';
 
 @Injectable()
 export class ToastService {
-    activate(message: string, type: MessageType = MessageType.Danger) { };
+    activate(message: string, type: MessageType = MessageType.Danger, autoCloseAfterSeconds: number = undefined) { };
 
     deactivate() { };
 }

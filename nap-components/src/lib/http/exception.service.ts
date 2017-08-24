@@ -10,12 +10,12 @@ export class ExceptionService {
         private toastService: ToastService
     ) { }
 
-    catchBadResponse: (response: Response) => Observable<any> = (response: Response) => {
-        this.handleError(response);
+    catchBadResponse(response: Response, noToast = false): Observable<any> {
+        this.handleError(response, noToast);
         return Observable.of();
     }
 
-    private handleError(response: Response) {
+    private handleError(response: Response, noToast: boolean) {
         const defaultMessage = 'Sorry, an error occurred while processing your request, please notify the administrators.';
         let errorMessage = '';
         const contentType = response.headers.get('content-type');
@@ -29,6 +29,8 @@ export class ExceptionService {
             }
         }
 
-        this.toastService.activate(errorMessage);
+        if (!noToast) {
+            this.toastService.activate(errorMessage);
+        }
     }
 }

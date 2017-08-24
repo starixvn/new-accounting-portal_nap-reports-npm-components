@@ -74,8 +74,8 @@ function convertDateStructToMoment(dateStruct: NgbDateStruct): moment.Moment {
     return moment.utc([dateStruct.year, dateStruct.month - 1, dateStruct.day]);
 }
 
-function convertMomentToDateStruct(moment: moment.Moment): NgbDateStruct {
-    return { year: moment.year(), month: moment.month() + 1, day: moment.date() };
+function convertMomentToDateStruct(date: moment.Moment): NgbDateStruct {
+    return { year: date.year(), month: date.month() + 1, day: date.date() };
 }
 
 function formatMomentDate(momentDate: moment.Moment, dateFormat: DateFormat): string {
