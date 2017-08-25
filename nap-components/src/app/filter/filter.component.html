@@ -104,6 +104,9 @@
                 Percent format: <span [napPercentFormat]="value"></span>
             </span>
             <span>
+                Number format: <span [napNumberFormat]="value" [format]="'0%'"></span>
+            </span>
+            <span>
                 <button class="btn btn-secondary" (click)="value = value * 2">Double value</button>
                 <button class="btn btn-secondary" (click)="value = -value">Swap</button>
             </span>
@@ -116,9 +119,7 @@
     </div>
     <div class="row">
         <div class="col-12">
-            Collapse: <i class="nap-icon nap-icon-header-collapse"></i>
-            Expand: <i class="nap-icon nap-icon-header-collapse"></i>
-            Excel: <i class="nap-icon nap-icon-breadcrumb-excel"></i>
+            Collapse: <i class="nap-icon nap-icon-header-collapse"></i> Expand: <i class="nap-icon nap-icon-header-collapse"></i>            Excel: <i class="nap-icon nap-icon-breadcrumb-excel"></i>
         </div>
     </div>
 </div>

@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { DecimalFormatDirective } from './decimal-format.directive';
 import { IntegerFormatDirective } from './integer-format.directive';
 import { PercentFormatDirective } from './percent-format.directive';
+import { NumberFormatDirective } from './number-format.directive';
 
 @NgModule({
     imports: [
@@ -11,12 +12,14 @@ import { PercentFormatDirective } from './percent-format.directive';
     declarations: [
         DecimalFormatDirective,
         IntegerFormatDirective,
-        PercentFormatDirective
+        PercentFormatDirective,
+        NumberFormatDirective
     ],
     exports: [
         DecimalFormatDirective,
         IntegerFormatDirective,
-        PercentFormatDirective
+        PercentFormatDirective,
+        NumberFormatDirective
     ]
 })
 export class NumberFormatModule { }
