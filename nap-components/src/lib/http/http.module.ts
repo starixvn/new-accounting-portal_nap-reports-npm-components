@@ -4,7 +4,7 @@ import { ToastModule } from '../toast';
 import { SpinnerModule } from '../spinner';
 import { ExceptionService } from './exception.service';
 import { HttpService } from './http.service';
-import { AuthenticatedHttp } from './authenticated-http';
+import { CustomHttp } from './custom-http';
 
 @NgModule({
     imports: [
@@ -20,7 +20,7 @@ export class HttpModule {
             providers: [
                 ExceptionService,
                 HttpService,
-                { provide: Http, useClass: AuthenticatedHttp }
+                { provide: Http, useClass: CustomHttp }
             ]
         };
     }
