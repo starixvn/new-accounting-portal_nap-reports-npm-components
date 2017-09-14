@@ -26,11 +26,11 @@ export class RecheckinService {
     }
 
     private checkin() {
-        this.httpService.post<string>(this.recheckinConfig.checkinUrl, {}, {
+        this.httpService.post<boolean>(this.recheckinConfig.checkinUrl, {}, {
             noToast: true,
             noSpinner: true
-        }).subscribe(content => {
-            if (content === '1') {
+        }).subscribe(isKickedOut => {
+            if (isKickedOut) {
                 alert('You have logged in from another session or your login session has expired!');
                 const logoutUrl = Helper.redirectToUrl(this.recheckinConfig.logoutUrl);
                 return;
