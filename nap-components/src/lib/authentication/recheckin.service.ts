@@ -30,11 +30,10 @@ export class RecheckinService {
     }
 
     private checkin(url: string) {
-        this.httpService.post<Response>(url, {}, {
+        this.httpService.post<string>(url, {}, {
             noToast: true,
             noSpinner: true
-        }).subscribe(response => {
-            const content = response.text();
+        }).subscribe(content => {
             if (content === '1') {
                 alert('You have logged in from another session or your login session has expired!');
                 return;
