@@ -4,11 +4,16 @@ import { NavbarModule, NavbarService } from '../lib/navbar';
 import { HttpModule } from '../lib/http';
 import { SpinnerModule } from '../lib/spinner';
 import { ToastModule } from '../lib/toast';
-import { AuthenticationModule } from '../lib/authentication';
+import { AuthenticationModule, RecheckinConfig } from '../lib/authentication';
 import { AppComponent } from './app.component';
 import { CustomNavbarService } from './custom-navbar.service';
 import { FilterModule } from './filter';
 import { GridModule } from './grid';
+
+class CustomRecheckinConfig extends RecheckinConfig {
+  checkinUrl = 'Checkin';
+  logoutUrl = 'Logout';
+}
 
 @NgModule({
   declarations: [
@@ -25,7 +30,8 @@ import { GridModule } from './grid';
     GridModule
   ],
   providers: [
-    { provide: NavbarService, useClass: CustomNavbarService }
+    { provide: NavbarService, useClass: CustomNavbarService },
+    { provide: RecheckinConfig, useClass: CustomRecheckinConfig }
   ],
   bootstrap: [AppComponent]
 })

@@ -2,24 +2,20 @@ import { Injectable } from '@angular/core';
 import { Response } from '@angular/http';
 import * as _ from 'lodash';
 import { HttpService } from '../http';
-
-const defaultUrl = 'Login/ReCheckLogin';
+import { Helper } from '../helper';
+import { RecheckinConfig } from './recheckin.config';
 
 @Injectable()
 export class RecheckinService {
     private timer: NodeJS.Timer;
 
     constructor(
-        private httpService: HttpService
+        private httpService: HttpService,
+        private recheckinConfig: RecheckinConfig
     ) { }
 
-    start(url: string) {
-        if (_.isNil(url) || url === '') {
-            url = defaultUrl;
-        }
-
-        this.stop();
-        this.checkin(url);
+    start() {
+        this.checkin();
     }
 
     stop() {
@@ -29,17 +25,18 @@ export class RecheckinService {
         }
     }
 
-    private checkin(url: string) {
-        this.httpService.post<string>(url, {}, {
+    private checkin() {
+        this.httpService.post<string>(this.recheckinConfig.checkinUrl, {}, {
             noToast: true,
             noSpinner: true
         }).subscribe(content => {
             if (content === '1') {
                 alert('You have logged in from another session or your login session has expired!');
+                const logoutUrl = Helper.redirectToUrl(this.recheckinConfig.logoutUrl);
                 return;
             }
 
-            this.timer = setTimeout(() => this.checkin(url), 90000);
+            this.timer = setTimeout(() => this.checkin(), 90000);
         });
     }
 }

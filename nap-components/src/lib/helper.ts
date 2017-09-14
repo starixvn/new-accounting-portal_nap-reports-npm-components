@@ -3,6 +3,9 @@ import * as moment from 'moment';
 import * as _ from 'lodash';
 
 export let Helper = {
+    resolveUrl: resolveUrl,
+    redirectToHomePage: redirectToHomePage,
+    redirectToUrl: redirectToUrl,
     inArray: inArray,
     saveExcel: saveExcel,
     extend: extend
@@ -41,4 +44,17 @@ function saveExcel(response: Response, fileName: string) {
             0, 0, 0, 0, 0, false, false, false, false, 0, null);
         a.dispatchEvent(e);
     }
+}
+
+function resolveUrl(relativeUrl: string): string {
+    return document.baseURI + relativeUrl;
+}
+
+function redirectToUrl(relativeUrl: string) {
+    const absoluteUrl = resolveUrl(relativeUrl);
+    window.location.href = absoluteUrl + '?' + new Date().getMilliseconds();
+}
+
+function redirectToHomePage() {
+    window.location.href = document.baseURI + '?' + new Date().getMilliseconds();
 }

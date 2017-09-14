@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RecheckinDirective } from './recheckin.directive';
+import { RecheckinConfig } from './recheckin.config';
 
 @NgModule({
     declarations: [
@@ -7,6 +8,9 @@ import { RecheckinDirective } from './recheckin.directive';
     ],
     exports: [
         RecheckinDirective
+    ],
+    providers: [
+        RecheckinConfig
     ]
 })
 export class AuthenticationModule { }
