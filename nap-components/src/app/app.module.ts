@@ -4,6 +4,7 @@ import { NavbarModule, NavbarService } from '../lib/navbar';
 import { HttpModule } from '../lib/http';
 import { SpinnerModule } from '../lib/spinner';
 import { ToastModule } from '../lib/toast';
+import { AuthenticationModule } from '../lib/authentication';
 import { AppComponent } from './app.component';
 import { CustomNavbarService } from './custom-navbar.service';
 import { FilterModule } from './filter';
@@ -19,6 +20,7 @@ import { GridModule } from './grid';
     NavbarModule.forRoot(),
     SpinnerModule.forRoot(),
     ToastModule.forRoot(),
+    AuthenticationModule,
     FilterModule,
     GridModule
   ],

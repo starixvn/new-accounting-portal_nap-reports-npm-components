@@ -16,6 +16,7 @@
         ]
     },
     "files": [
+        "tmp/authentication/index.ts",
         "tmp/breadcrumb/index.ts",
         "tmp/chart/index.ts",
         "tmp/countdown-timer/index.ts",

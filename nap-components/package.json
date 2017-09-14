@@ -1,6 +1,6 @@
 {
   "name": "nap-components",
-  "version": "1.2.8",
+  "version": "1.2.9",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -12,7 +12,8 @@
     "postbuild": "rimraf tmp",
     "pub": "npm run build && npm publish dist",
     "test": "ng test",
-    "test-coverage": "ng test --code-coverage"
+    "test-coverage": "ng test --code-coverage",
+    "ci": "ng lint && ng test --code-coverage --single-run=true"
   },
   "author": "Leo Vo",
   "license": "ISC",

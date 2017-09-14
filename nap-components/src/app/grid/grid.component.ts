@@ -66,6 +66,28 @@ export class GridComponent implements OnInit, OnChanges {
         this.toastService.activate(`Breadcrumb index ${index} clicked!`, MessageType.Info);
     }
 
+    applyOrangeWinLimit() { }
+
+    applyYellowWinLimit() { }
+
+    applyRedWinLimit() { }
+
+    applyRedBlockPlacebet() { }
+
+    applyRedBlockTransfer() { }
+
+    onPageChange() { }
+
+    save() { }
+
+    cancel() { }
+
+    showGroupSetting() { }
+
+    onIsBlockedPlacebetRedLevelChange() { }
+
+    onIsBlockedTransferRedLevelChange() { }
+
     private search() {
         if (this.countdownTimerComponent && this.countdownTimerComponent.isRunning) {
             this.countdownTimerComponent.start();

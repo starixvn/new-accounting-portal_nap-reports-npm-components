@@ -1,5 +1,5 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { PaginationInstance } from 'ngx-pagination';
+import { PaginationInstance, PaginationControlsDirective } from 'ngx-pagination';
 import { NumberFormatType, NumberFormatHelper } from '../number-format';
 import { PaginationConfig } from './pagination.model';
 import { PaginationService } from './pagination.service';
@@ -12,6 +12,7 @@ import { PaginationService } from './pagination.service';
 export class PaginationComponent {
     @Input() config: PaginationInstance;
     @Output() pageChange = new EventEmitter();
+    paginationApi: PaginationControlsDirective;
     pageSizes: number[];
 
     constructor(

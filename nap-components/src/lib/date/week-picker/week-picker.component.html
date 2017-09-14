@@ -5,10 +5,10 @@
         {{date.day}}
     </div>
 </ng-template>
-<div class="input-group" napDatePickerToggle #t="napDatePickerToggle">
+<div class="input-group" napDatePickerToggle #datePickerToggle="napDatePickerToggle">
     <input class="form-control" readonly="readonly" ngbDatepicker #d="ngbDatepicker" [showWeekNumbers]="true" [dayTemplate]="dt"
-        [(ngModel)]="date" [minDate]="minDate" [maxDate]="maxDate" (ngModelChange)="onModelChange()" (click)="t.toggle(d, $event)">
-    <div class="input-group-addon" (click)="t.toggle(d, $event)">
+        [(ngModel)]="date" [minDate]="minDate" [maxDate]="maxDate" (ngModelChange)="onModelChange()" (click)="datePickerToggle.toggle(d, $event)">
+    <div class="input-group-addon" (click)="datePickerToggle.toggle(d, $event)">
         <i class="fa fa-calendar" aria-hidden="true"></i>
     </div>
 </div>

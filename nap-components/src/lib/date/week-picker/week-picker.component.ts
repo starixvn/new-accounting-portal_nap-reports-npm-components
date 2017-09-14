@@ -1,5 +1,6 @@
 import { Component, Renderer, Input, Output, EventEmitter, OnChanges, SimpleChanges } from '@angular/core';
 import { NgbDateParserFormatter, NgbInputDatepicker, NgbDatepicker } from '@ng-bootstrap/ng-bootstrap';
+import { DatePickerToggleDirective } from '../date-picker-toggle';
 import { NgbDate, NgbDateStruct, DateRange, DateFormat } from '../date-model';
 import { DateHelper } from '../date-helper';
 import { WeekParserFormatter } from './week-parser-formatter';
@@ -18,6 +19,7 @@ export class WeekPickerComponent implements OnChanges {
     @Input() maxDate: NgbDateStruct;
     @Input() date: NgbDateStruct;
     @Output() dateChange = new EventEmitter<NgbDateStruct>();
+    datePickerToggle: DatePickerToggleDirective;
     private currentWeekElement: HTMLElement;
     private weekRange: DateRange;
 
