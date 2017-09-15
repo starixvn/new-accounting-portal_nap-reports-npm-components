@@ -107,6 +107,9 @@
                 Number format: <span [napNumberFormat]="value" [format]="'0%'"></span>
             </span>
             <span>
+                Number style: <span [napNumberStyle]="value">{{value}}</span>
+            </span>
+            <span>
                 <button class="btn btn-secondary" (click)="value = value * 2">Double value</button>
                 <button class="btn btn-secondary" (click)="value = -value">Swap</button>
             </span>

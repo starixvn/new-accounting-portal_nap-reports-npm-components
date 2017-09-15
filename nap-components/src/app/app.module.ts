@@ -10,7 +10,7 @@ import { CustomNavbarService } from './custom-navbar.service';
 import { FilterModule } from './filter';
 import { GridModule } from './grid';
 
-class CustomRecheckinConfig extends RecheckinConfig {
+export class CustomRecheckinConfig extends RecheckinConfig {
   checkinUrl = 'Checkin';
   logoutUrl = 'Logout';
 }

@@ -5,3 +5,4 @@ export * from './decimal-format.directive';
 export * from './integer-format.directive';
 export * from './percent-format.directive';
 export * from './number-format.directive';
+export * from './number-style.directive';
