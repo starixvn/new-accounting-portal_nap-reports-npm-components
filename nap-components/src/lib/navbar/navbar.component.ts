@@ -17,10 +17,10 @@ export class NavbarComponent implements OnInit {
     ) { }
 
     ngOnInit() {
-        this.userMenus = this.navbarService.userMenus;
         this.navbarService.query().subscribe(navbar => {
             this.menus = this.navbarService.compileMenus(navbar.menus);
             this.username = navbar.username || 'user';
+            this.userMenus = this.navbarService.userMenus;
         });
     }
 }
