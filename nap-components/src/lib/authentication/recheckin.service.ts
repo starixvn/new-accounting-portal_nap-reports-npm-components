@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { Response } from '@angular/http';
 import * as _ from 'lodash';
 import { HttpService } from '../http';
 import { Helper } from '../helper';

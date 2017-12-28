@@ -3,7 +3,7 @@ import { TestBed, ComponentFixture, async, fakeAsync, tick } from '@angular/core
 import { BrowserModule, By } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { eventHelper } from '../../../testing';
-import { NgbDateStruct } from '../date-model';
+import { NapDateStruct } from '../date-model';
 import { YearPickerComponent } from './year-picker.component';
 
 @Component({
@@ -12,11 +12,11 @@ import { YearPickerComponent } from './year-picker.component';
     `
 })
 class TestComponent {
-    selectedDate: NgbDateStruct;
-    date: NgbDateStruct = { year: 2016, month: 11, day: 2 };
-    minDate: NgbDateStruct = { year: 2016, month: 2, day: 2 };
-    maxDate: NgbDateStruct = { year: 2017, month: 3, day: 31 };
-    onDateChange(date: NgbDateStruct) {
+    selectedDate: NapDateStruct;
+    date: NapDateStruct = { year: 2016, month: 11, day: 2 };
+    minDate: NapDateStruct = { year: 2016, month: 2, day: 2 };
+    maxDate: NapDateStruct = { year: 2017, month: 3, day: 31 };
+    onDateChange(date: NapDateStruct) {
         this.selectedDate = date;
     }
 }
@@ -54,7 +54,7 @@ describe('YearPickerComponent', () => {
         yearDebugEl.triggerEventHandler('change', { target: { value: '2017' } });
         fixture.detectChanges();
         const date = component.selectedDate;
-        const expectedDate: NgbDateStruct = { year: 2017, month: 11, day: 2 };
+        const expectedDate: NapDateStruct = { year: 2017, month: 11, day: 2 };
         expect(date).toEqual(expectedDate);
     });
 });

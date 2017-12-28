@@ -1,25 +1,25 @@
-<div class="filter-container">
+<div class="nap-filter">
     <div class="row">
-        <div class="col-nap col-nap-1">
-            <div class="group-nap">
+        <div class="nap-col nap-col-1">
+            <div class="nap-group">
                 <label>From Date</label>
-                <div class="control-nap">
-                    <nap-date-picker [(date)]="fromDate"></nap-date-picker>
+                <div class="nap-control">
+                    <nap-date-picker [(date)]="fromDate" [minDate]="minDate" [maxDate]="maxDate"></nap-date-picker>
                 </div>
             </div>
         </div>
-        <div class="col-nap col-nap-2">
-            <div class="group-nap">
+        <div class="nap-col nap-col-2">
+            <div class="nap-group">
                 <label>To Date</label>
-                <div class="control-nap">
-                    <nap-date-picker [(date)]="toDate"></nap-date-picker>
+                <div class="nap-control">
+                    <nap-date-picker [(date)]="toDate" [minDate]="minDate" [maxDate]="maxDate"></nap-date-picker>
                 </div>
             </div>
         </div>
-        <div class="col-nap col-nap-3">
-            <div class="group-nap">
+        <div class="nap-col nap-col-3">
+            <div class="nap-group">
                 <label>Product</label>
-                <div class="control-nap">
+                <div class="nap-control">
                     <select class="form-control" [(ngModel)]="productId">
                         <option *ngFor="let product of products" [ngValue]="product.id">
                             {{product.name}}
@@ -28,101 +28,92 @@
                 </div>
             </div>
         </div>
-        <div class="col-nap col-nap-4">
-            <div class="group-nap">
+        <div class="nap-col nap-col-4">
+            <div class="nap-group">
                 <label>Reached Limit Level</label>
-                <div class="control-nap">
+                <div class="nap-control">
                     <nap-dropdown-select [items]="reachedLimitLevels" [(value)]="reachedLimitLevel"></nap-dropdown-select>
                 </div>
             </div>
         </div>
     </div>
     <div class="row">
-        <div class="col-nap col-nap-1">
-            <div class="group-nap">
+        <div class="nap-col nap-col-1">
+            <div class="nap-group">
+                <label>Week</label>
+                <div class="nap-control">
+                    <nap-week-picker [(date)]="date" [minDate]="minDate" [maxDate]="maxDate"></nap-week-picker>
+                </div>
+            </div>
+        </div>
+        <div class="nap-col nap-col-2">
+            <div class="nap-group">
+                <label>Month</label>
+                <div class="nap-control">
+                    <nap-month-picker [(date)]="date" [minDate]="minDate" [maxDate]="maxDate"></nap-month-picker>
+                </div>
+            </div>
+        </div>
+        <div class="nap-col nap-col-3">
+            <div class="nap-group">
+                <label>Year</label>
+                <div class="nap-control">
+                    <nap-year-picker [(date)]="date" [minDate]="minDate" [maxDate]="maxDate"></nap-year-picker>
+                </div>
+            </div>
+        </div>
+        <div class="nap-col nap-col-exclude-test">
+            <div class="form-check nap-form-checkbox">
+                <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input" [(ngModel)]="isExcludeTestData"> Exclude test data
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="nap-col nap-col-1">
+            <div class="nap-group">
+                <label>Name</label>
+                <div class="nap-control">
+                    <span>Test</span>
+                </div>
+            </div>
+        </div>
+        <div class="nap-col nap-col-2">
+            <div class="nap-group">
                 <label>Username</label>
-                <div class="control-nap">
+                <div class="nap-control">
                     <input type="text" class="form-control" [(ngModel)]="userName">
                 </div>
             </div>
         </div>
-        <div class="col-nap col-nap-2">
-            <div class="group-nap">
+        <div class="nap-col nap-col-3">
+            <div class="nap-group">
                 <label>Site / Licensee</label>
-                <div class="control-nap">
-                    <nap-dropdown-treeview-select [items]="sites" [(value)]="site"></nap-dropdown-treeview-select>
+                <div class="nap-control">
+                    <nap-dropdown-treeview-select [items]="sites" [(value)]="siteId"></nap-dropdown-treeview-select>
                 </div>
             </div>
         </div>
-        <div class="col-nap col-nap-3">
-            <div class="group-nap">
-                <label>Currency</label>
-                <div class="control-nap">
-                    <select class="form-control" [(ngModel)]="currencyId">
-                        <option *ngFor="let currency of currencies" [ngValue]="currency.id">
-                            {{currency.name}}
-                        </option>
-                    </select>
+        <div class="nap-col nap-col-4">
+            <div class="nap-group">
+                <label>Device</label>
+                <div class="nap-control">
+                    <ngx-dropdown-treeview [items]="devices" [config]="treeviewConfig" (selectedChange)="selectedDevices = $event" [buttonClass]="''"></ngx-dropdown-treeview>
                 </div>
-            </div>
-        </div>
-        <div class="col-nap col-nap-exclude-test">
-            <div class="d-inline-block">
-                <div class="form-check">
-                    <label class="form-check-label">
-                        <input type="checkbox" class="form-check-input" [(ngModel)]="isExcludeTestData">
-                        Exclude test data
-                    </label>
-                </div>
-            </div>
-            <div class="pull-right">
-                <button type="button" class="btn btn-primary" (click)="search()">
-                    Search
-                </button>
             </div>
         </div>
     </div>
     <div class="row">
         <div class="col-12">
+            <button type="button" class="btn btn-primary nap-button" (click)="search()">
+                Search
+            </button>
             <button class="btn btn-secondary" (click)="showConfirmation()">Show confirmation</button>
             <button class="btn btn-secondary" (click)="loadSite()">Reload Site / Licensee</button>
         </div>
     </div>
-    <div class="row">
-        <div class="col-12">
-            NumberFormat:
-            <span>
-                Value: {{value}}
-            </span>
-            <span>
-                Integer format: <span [napIntegerFormat]="value"></span>
-            </span>
-            <span>
-                Decimal format: <span [napDecimalFormat]="value"></span>
-            </span>
-            <span>
-                Percent format: <span [napPercentFormat]="value"></span>
-            </span>
-            <span>
-                Number format: <span [napNumberFormat]="value" [format]="'0%'"></span>
-            </span>
-            <span>
-                Number style: <span [napNumberStyle]="value">{{value}}</span>
-            </span>
-            <span>
-                <button class="btn btn-secondary" (click)="value = value * 2">Double value</button>
-                <button class="btn btn-secondary" (click)="value = -value">Swap</button>
-            </span>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-12">
-            Site: {{site}}
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-12">
-            Collapse: <i class="nap-icon nap-icon-header-collapse"></i> Expand: <i class="nap-icon nap-icon-header-collapse"></i>            Excel: <i class="nap-icon nap-icon-breadcrumb-excel"></i>
-        </div>
-    </div>
 </div>
+<code>
+    {{model | json}}
+</code>

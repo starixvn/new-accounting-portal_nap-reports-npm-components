@@ -7,4 +7,4 @@ export enum NumberFormatType {
 
     /// 0.12345 -> 12.35
     Percent
-};
+}

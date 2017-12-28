@@ -1,14 +1,13 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
-import { Http, HttpModule as AngularHttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 import { ToastModule } from '../toast';
 import { SpinnerModule } from '../spinner';
 import { ExceptionService } from './exception.service';
 import { HttpService } from './http.service';
-import { CustomHttp } from './custom-http';
 
 @NgModule({
     imports: [
-        AngularHttpModule,
+        HttpClientModule,
         ToastModule.forRoot(),
         SpinnerModule.forRoot()
     ]
@@ -19,8 +18,7 @@ export class HttpModule {
             ngModule: HttpModule,
             providers: [
                 ExceptionService,
-                HttpService,
-                { provide: Http, useClass: CustomHttp }
+                HttpService
             ]
         };
     }

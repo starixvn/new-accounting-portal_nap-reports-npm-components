@@ -1,4 +1,3 @@
-import { Response } from '@angular/http';
 import * as moment from 'moment';
 import * as _ from 'lodash';
 
@@ -7,7 +6,7 @@ export let Helper = {
     redirectToHomePage: redirectToHomePage,
     redirectToUrl: redirectToUrl,
     inArray: inArray,
-    saveExcel: saveExcel,
+    downloadFile: downloadFile,
     extend: extend
 };
 
@@ -29,20 +28,21 @@ function inArray<T>(list: T[], item: T): boolean {
     return false;
 }
 
-function saveExcel(response: Response, fileName: string) {
-    const contentType = 'application/vnd.ms-excel';
-    const blob = response.blob();
+function downloadFile(blob: any, fileName: string) {
     if (navigator.appVersion.toString().indexOf('.NET') > 0) {
         window.navigator.msSaveBlob(blob, fileName);
     } else {
-        const e = document.createEvent('MouseEvents');
+        const url = window.URL.createObjectURL(blob); // <-- work with blob directly
+
+        // create hidden dom element (so it works in all browsers)
         const a = document.createElement('a');
+        a.setAttribute('style', 'display:none;');
+        document.body.appendChild(a);
+
+        // create file, attach to hidden element and open hidden element
+        a.href = url;
         a.download = fileName;
-        a.href = window.URL.createObjectURL(blob);
-        (<any>a.dataset).downloadurl = [contentType, a.download, a.href].join(':');
-        e.initMouseEvent('click', true, false, window,
-            0, 0, 0, 0, 0, false, false, false, false, 0, null);
-        a.dispatchEvent(e);
+        a.click();
     }
 }
 

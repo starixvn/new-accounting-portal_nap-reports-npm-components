@@ -42,7 +42,7 @@ export class ToastComponent implements OnInit, OnDestroy {
         }
     }
 
-    private activate(message: string, type: MessageType = MessageType.Danger, autoCloseAfterSeconds: number = undefined): void {
+    private activate(message: string, type: MessageType = MessageType.Danger, autoCloseAfterSeconds?: number): void {
         this.clearTimer();
         this.message = message;
         this.type = type;

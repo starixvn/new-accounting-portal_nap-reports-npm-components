@@ -1,6 +1,6 @@
 import { DatePipe } from '@angular/common';
 import { NgbDateParserFormatter } from '@ng-bootstrap/ng-bootstrap';
-import { NgbDateStruct } from '../date-model';
+import { NapDateStruct } from '../date-model';
 import { DateHelper } from '../date-helper';
 
 export class DateParserFormatter extends NgbDateParserFormatter {
@@ -11,7 +11,7 @@ export class DateParserFormatter extends NgbDateParserFormatter {
         super();
     }
 
-    format(dateStruct: NgbDateStruct): string {
+    format(dateStruct: NapDateStruct): string {
         if (dateStruct === null) {
             return '';
         }
@@ -19,8 +19,8 @@ export class DateParserFormatter extends NgbDateParserFormatter {
         return this.datePipe.transform(date, this.dateFormatString);
     }
 
-    parse(value: string): NgbDateStruct {
-        let returnVal: NgbDateStruct;
+    parse(value: string): NapDateStruct {
+        let returnVal: NapDateStruct;
         if (!value) {
             returnVal = null;
         } else {

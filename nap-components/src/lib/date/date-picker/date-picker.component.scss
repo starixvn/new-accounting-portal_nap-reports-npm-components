@@ -1,9 +1,32 @@
+@import '~nap-theme/scss/variables';
 input,
 .input-group-addon {
     cursor: pointer;
     background: #fff !important;
 }
 
-:host /deep/ .small {
-    font-size: 90%;
+$width: 1.6rem;
+$height: 1.6rem;
+:host /deep/ {
+    select {
+        padding: $input-btn-padding-y $input-btn-padding-x !important;
+        font-size: $font-size-base !important;
+        line-height: $height*0.75 !important;
+    }
+    .ngb-dp-arrow,
+    .ngb-dp-day,
+    .ngb-dp-weekday,
+    .ngb-dp-week-number,
+    .btn-light {
+        width: $width !important;
+        height: $height !important;
+        line-height: $height !important;
+    }
+    .small,
+    .ngb-dp-navigation-chevron {
+        font-size: 85% !important;
+    }
+    .ngb-dp-arrow-btn {
+        padding: 0.3rem 0.6rem !important;
+    }
 }

@@ -1,14 +1,14 @@
-import { Renderer, ElementRef } from '@angular/core';
+import { Renderer2, ElementRef } from '@angular/core';
 import * as _ from 'lodash';
 
-export function renderClass(renderer: Renderer, value: number, elementRef: ElementRef) {
+export function renderClass(renderer2: Renderer2, value: number, elementRef: ElementRef) {
     if (!isValidNumber(value)) {
         return;
     }
 
-    renderer.setElementClass(elementRef.nativeElement, 'number-zero', false);
-    renderer.setElementClass(elementRef.nativeElement, 'number-positive', false);
-    renderer.setElementClass(elementRef.nativeElement, 'number-negative', false);
+    renderer2.removeClass(elementRef.nativeElement, 'number-zero');
+    renderer2.removeClass(elementRef.nativeElement, 'number-positive');
+    renderer2.removeClass(elementRef.nativeElement, 'number-negative');
 
     let className = '';
     if (value === 0) {
@@ -20,7 +20,7 @@ export function renderClass(renderer: Renderer, value: number, elementRef: Eleme
     }
 
     if (className !== '') {
-        renderer.setElementClass(elementRef.nativeElement, className, true);
+        renderer2.addClass(elementRef.nativeElement, className);
     }
 }
 

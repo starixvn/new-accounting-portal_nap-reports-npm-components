@@ -1,16 +1,17 @@
 import { Component, Input, Output, OnChanges, EventEmitter, SimpleChanges } from '@angular/core';
 import { DatePipe } from '@angular/common';
-import { NgbDateStruct } from '../date-model';
+import { NapDateStruct } from '../date-model';
 
 @Component({
     selector: 'nap-year-picker',
     templateUrl: './year-picker.component.html'
 })
 export class YearPickerComponent implements OnChanges {
-    @Input() minDate: NgbDateStruct;
-    @Input() maxDate: NgbDateStruct;
-    @Input() date: NgbDateStruct;
-    @Output() dateChange = new EventEmitter<NgbDateStruct>();
+    @Input() hasLabel = false;
+    @Input() minDate: NapDateStruct;
+    @Input() maxDate: NapDateStruct;
+    @Input() date: NapDateStruct;
+    @Output() dateChange = new EventEmitter<NapDateStruct>();
     year: number;
     years: number[];
 

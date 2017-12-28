@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
-import { NumberFormatModule } from '../../lib/number-format';
+import { TreeviewModule } from 'ngx-treeview';
 import { DateModule } from '../../lib/date';
 import { DropdownSelectModule } from '../../lib/dropdown-select';
 import { ConfirmationModule } from '../../lib/confirmation';
@@ -14,11 +14,11 @@ import { FilterComponent } from './filter.component';
     imports: [
         BrowserModule,
         FormsModule,
-        HttpModule,
+        HttpClientModule,
         DateModule,
+        TreeviewModule.forRoot(),
         DropdownTreeviewSelectModule,
         DropdownSelectModule,
-        NumberFormatModule,
         ConfirmationModule.forRoot()
     ],
     declarations: [

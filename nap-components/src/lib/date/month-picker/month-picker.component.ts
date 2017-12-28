@@ -1,7 +1,7 @@
 import { Component, Input, OnChanges, Output, EventEmitter, SimpleChanges } from '@angular/core';
 import { DatePipe } from '@angular/common';
 import * as moment from 'moment';
-import { NgbDateStruct } from '../date-model';
+import { NapDateStruct } from '../date-model';
 
 @Component({
     selector: 'nap-month-picker',
@@ -9,11 +9,12 @@ import { NgbDateStruct } from '../date-model';
     styleUrls: ['./month-picker.component.scss']
 })
 export class MonthPickerComponent implements OnChanges {
-    @Input() isShowLabel = true;
-    @Input() minDate: NgbDateStruct;
-    @Input() maxDate: NgbDateStruct;
-    @Input() date: NgbDateStruct;
-    @Output() dateChange = new EventEmitter<NgbDateStruct>();
+    @Input() hasMonthLabel = false;
+    @Input() hasYearLabel = true;
+    @Input() minDate: NapDateStruct;
+    @Input() maxDate: NapDateStruct;
+    @Input() date: NapDateStruct;
+    @Output() dateChange = new EventEmitter<NapDateStruct>();
     month: number;
     months: number[];
     year: number;

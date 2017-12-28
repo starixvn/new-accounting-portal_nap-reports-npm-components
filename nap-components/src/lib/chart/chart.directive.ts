@@ -1,13 +1,5 @@
 import {
-    OnDestroy,
-    OnInit,
-    OnChanges,
-    EventEmitter,
-    ElementRef,
-    Input,
-    Output,
-    SimpleChanges,
-    Directive
+    OnDestroy, OnInit, OnChanges, EventEmitter, ElementRef, Input, Output, SimpleChanges, Directive
 } from '@angular/core';
 
 declare var Chart: any;
@@ -44,106 +36,6 @@ interface Color {
 interface Colors extends Color {
     data?: number[];
     label?: string;
-}
-
-function rgba(colour: Array<number>, alpha: number): string {
-    return 'rgba(' + colour.concat(alpha).join(',') + ')';
-}
-
-function getRandomInt(min: number, max: number): number {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-}
-
-function formatLineColor(colors: Array<number>): Color {
-    return {
-        backgroundColor: rgba(colors, 1),
-        borderColor: rgba(colors, 1),
-        pointBackgroundColor: rgba(colors, 1),
-        pointBorderColor: '#fff',
-        pointHoverBackgroundColor: '#fff',
-        pointHoverBorderColor: rgba(colors, 1)
-    };
-}
-
-function formatBarColor(colors: Array<number>): Color {
-    return {
-        backgroundColor: rgba(colors, 1),
-        borderColor: rgba(colors, 1),
-        hoverBackgroundColor: rgba(colors, 1),
-        hoverBorderColor: rgba(colors, 1)
-    };
-}
-
-function formatPieColors(colors: Array<number[]>): Colors {
-    return {
-        backgroundColor: colors.map((color: number[]) => rgba(color, 1)),
-        borderColor: colors.map(() => '#fff'),
-        pointBackgroundColor: colors.map((color: number[]) => rgba(color, 1)),
-        pointBorderColor: colors.map(() => '#fff'),
-        pointHoverBackgroundColor: colors.map((color: number[]) => rgba(color, 1)),
-        pointHoverBorderColor: colors.map((color: number[]) => rgba(color, 1))
-    };
-}
-
-function formatPolarAreaColors(colors: Array<number[]>): Color {
-    return {
-        backgroundColor: colors.map((color: number[]) => rgba(color, 1)),
-        borderColor: colors.map((color: number[]) => rgba(color, 1)),
-        hoverBackgroundColor: colors.map((color: number[]) => rgba(color, 1)),
-        hoverBorderColor: colors.map((color: number[]) => rgba(color, 1))
-    };
-}
-
-function getRandomColor(): number[] {
-    return [getRandomInt(0, 255), getRandomInt(0, 255), getRandomInt(0, 255)];
-}
-
-/**
- * Generate colors for line|bar charts
- * @param index
- * @returns {number[]|Color}
- */
-function generateColor(index: number): number[] {
-    return ChartDirective.defaultColors[index] || getRandomColor();
-}
-
-/**
- * Generate colors for pie|doughnut charts
- * @param count
- * @returns {Colors}
- */
-function generateColors(count: number): Array<number[]> {
-    const colorsArr: Array<number[]> = new Array(count);
-    for (let i = 0; i < count; i++) {
-        colorsArr[i] = ChartDirective.defaultColors[i] || getRandomColor();
-    }
-    return colorsArr;
-}
-
-/**
- * Generate colors by chart type
- * @param chartType
- * @param index
- * @param count
- * @returns {Color}
- */
-function getColors(chartType: string, index: number, count: number): Color | number[] {
-    if (chartType === 'pie' || chartType === 'doughnut') {
-        return formatPieColors(generateColors(count));
-    }
-
-    if (chartType === 'polarArea') {
-        return formatPolarAreaColors(generateColors(count));
-    }
-
-    if (chartType === 'line' || chartType === 'radar') {
-        return formatLineColor(generateColor(index));
-    }
-
-    if (chartType === 'bar' || chartType === 'horizontalBar') {
-        return formatBarColor(generateColor(index));
-    }
-    return generateColor(index);
 }
 
 @Directive({
@@ -322,4 +214,104 @@ export class ChartDirective implements OnDestroy, OnChanges, OnInit {
         this.ngOnDestroy();
         this.chart = this.getChartBuilder(this.ctx/*, data, this.options*/);
     }
+}
+
+function rgba(colour: Array<number>, alpha: number): string {
+    return 'rgba(' + colour.concat(alpha).join(',') + ')';
+}
+
+function getRandomInt(min: number, max: number): number {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function formatLineColor(colors: Array<number>): Color {
+    return {
+        backgroundColor: rgba(colors, 1),
+        borderColor: rgba(colors, 1),
+        pointBackgroundColor: rgba(colors, 1),
+        pointBorderColor: '#fff',
+        pointHoverBackgroundColor: '#fff',
+        pointHoverBorderColor: rgba(colors, 1)
+    };
+}
+
+function formatBarColor(colors: Array<number>): Color {
+    return {
+        backgroundColor: rgba(colors, 1),
+        borderColor: rgba(colors, 1),
+        hoverBackgroundColor: rgba(colors, 1),
+        hoverBorderColor: rgba(colors, 1)
+    };
+}
+
+function formatPieColors(colors: Array<number[]>): Colors {
+    return {
+        backgroundColor: colors.map((color: number[]) => rgba(color, 1)),
+        borderColor: colors.map(() => '#fff'),
+        pointBackgroundColor: colors.map((color: number[]) => rgba(color, 1)),
+        pointBorderColor: colors.map(() => '#fff'),
+        pointHoverBackgroundColor: colors.map((color: number[]) => rgba(color, 1)),
+        pointHoverBorderColor: colors.map((color: number[]) => rgba(color, 1))
+    };
+}
+
+function formatPolarAreaColors(colors: Array<number[]>): Color {
+    return {
+        backgroundColor: colors.map((color: number[]) => rgba(color, 1)),
+        borderColor: colors.map((color: number[]) => rgba(color, 1)),
+        hoverBackgroundColor: colors.map((color: number[]) => rgba(color, 1)),
+        hoverBorderColor: colors.map((color: number[]) => rgba(color, 1))
+    };
+}
+
+function getRandomColor(): number[] {
+    return [getRandomInt(0, 255), getRandomInt(0, 255), getRandomInt(0, 255)];
+}
+
+/**
+ * Generate colors for line|bar charts
+ * @param index
+ * @returns {number[]|Color}
+ */
+function generateColor(index: number): number[] {
+    return ChartDirective.defaultColors[index] || getRandomColor();
+}
+
+/**
+ * Generate colors for pie|doughnut charts
+ * @param count
+ * @returns {Colors}
+ */
+function generateColors(count: number): Array<number[]> {
+    const colorsArr: Array<number[]> = new Array(count);
+    for (let i = 0; i < count; i++) {
+        colorsArr[i] = ChartDirective.defaultColors[i] || getRandomColor();
+    }
+    return colorsArr;
+}
+
+/**
+ * Generate colors by chart type
+ * @param chartType
+ * @param index
+ * @param count
+ * @returns {Color}
+ */
+function getColors(chartType: string, index: number, count: number): Color | number[] {
+    if (chartType === 'pie' || chartType === 'doughnut') {
+        return formatPieColors(generateColors(count));
+    }
+
+    if (chartType === 'polarArea') {
+        return formatPolarAreaColors(generateColors(count));
+    }
+
+    if (chartType === 'line' || chartType === 'radar') {
+        return formatLineColor(generateColor(index));
+    }
+
+    if (chartType === 'bar' || chartType === 'horizontalBar') {
+        return formatBarColor(generateColor(index));
+    }
+    return generateColor(index);
 }

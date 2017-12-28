@@ -1,4 +1,4 @@
-import { NgbDateStruct } from '../date-model';
+import { NapDateStruct } from '../date-model';
 import { DateParserFormatter } from './date-parser-formatter';
 
 describe('DateParserFormatter', () => {
@@ -10,7 +10,7 @@ describe('DateParserFormatter', () => {
         });
 
         it('should format a valid input to formatted string', () => {
-            const date: NgbDateStruct = { year: 2016, month: 11, day: 2 };
+            const date: NapDateStruct = { year: 2016, month: 11, day: 2 };
             expect(formatter.format(date)).toBe('November 2, 2016');
         });
     });
@@ -34,7 +34,7 @@ describe('DateParserFormatter', () => {
 
         it('should parse a valid input to valid object', () => {
             const dateStruct = formatter.parse('November 2, 2016');
-            const expectedDate: NgbDateStruct = { year: 2016, month: 11, day: 2 };
+            const expectedDate: NapDateStruct = { year: 2016, month: 11, day: 2 };
             expect(dateStruct).toEqual(expectedDate);
         });
     });

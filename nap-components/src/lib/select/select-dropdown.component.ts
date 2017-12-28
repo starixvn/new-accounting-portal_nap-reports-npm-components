@@ -1,13 +1,5 @@
 import {
-    AfterViewInit,
-    Component,
-    EventEmitter,
-    Input,
-    OnChanges,
-    OnInit,
-    Output,
-    ViewChild,
-    ViewEncapsulation
+    AfterViewInit, Component, EventEmitter, Input, OnChanges, OnInit, Output, ViewChild
 } from '@angular/core';
 
 import { Option } from './option';
@@ -19,9 +11,7 @@ import { OptionList } from './option-list';
     styleUrls: ['./select-dropdown.component.scss']
 })
 
-export class SelectDropdownComponent
-    implements AfterViewInit, OnChanges, OnInit {
-
+export class SelectDropdownComponent implements AfterViewInit, OnChanges, OnInit {
     @Input() filterEnabled: boolean;
     @Input() highlightColor: string;
     @Input() highlightTextColor: string;

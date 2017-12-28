@@ -1,70 +1,6 @@
 import { DateHelper } from './date-helper';
 
-export class NgbDate {
-    static from(date: { year: number, month: number, day?: number }): NgbDate {
-        return date ? new NgbDate(date.year, date.month, date.day ? date.day : 1) : null;
-    }
-
-    static fromToday(): NgbDate {
-        const today = new Date();
-        return NgbDate.fromDate(today);
-    }
-
-    static fromDateStruct(dateStruct: NgbDateStruct): NgbDate {
-        return new NgbDate(dateStruct.year, dateStruct.month, dateStruct.day);
-    }
-
-    static fromDate(date: Date): NgbDate {
-        return NgbDate.fromDateStruct(DateHelper.convertDateToDateStruct(date));
-    }
-
-    constructor(public year: number, public month: number, public day: number) { }
-
-    equals(other: NgbDate) {
-        return other && this.year === other.year && this.month === other.month && this.day === other.day;
-    }
-
-    before(other: NgbDate) {
-        if (!other) {
-            return false;
-        }
-
-        if (this.year === other.year) {
-            if (this.month === other.month) {
-                return this.day === other.day ? false : this.day < other.day;
-            } else {
-                return this.month < other.month;
-            }
-        } else {
-            return this.year < other.year;
-        }
-    }
-
-    after(other: NgbDate) {
-        if (!other) {
-            return false;
-        }
-        if (this.year === other.year) {
-            if (this.month === other.month) {
-                return this.day === other.day ? false : this.day > other.day;
-            } else {
-                return this.month > other.month;
-            }
-        } else {
-            return this.year > other.year;
-        }
-    }
-
-    toDateStruct(): NgbDateStruct {
-        return { year: this.year, month: this.month, day: this.day };
-    }
-
-    toString() {
-        return `${this.year}-${this.month}-${this.day}`;
-    }
-}
-
-export interface NgbDateStruct {
+export interface NapDateStruct {
     /**
      * The year, for example 2016
      */
@@ -81,9 +17,73 @@ export interface NgbDateStruct {
     day: number;
 }
 
+export class NapDate {
+    static from(date: { year: number, month: number, day?: number }): NapDate {
+        return date ? new NapDate(date.year, date.month, date.day ? date.day : 1) : null;
+    }
+
+    static fromToday(): NapDate {
+        const today = new Date();
+        return NapDate.fromDate(today);
+    }
+
+    static fromDateStruct(dateStruct: NapDateStruct): NapDate {
+        return new NapDate(dateStruct.year, dateStruct.month, dateStruct.day);
+    }
+
+    static fromDate(date: Date): NapDate {
+        return NapDate.fromDateStruct(DateHelper.convertDateToDateStruct(date));
+    }
+
+    constructor(public year: number, public month: number, public day: number) { }
+
+    equals(other: NapDate) {
+        return other && this.year === other.year && this.month === other.month && this.day === other.day;
+    }
+
+    before(other: NapDate) {
+        if (!other) {
+            return false;
+        }
+
+        if (this.year === other.year) {
+            if (this.month === other.month) {
+                return this.day === other.day ? false : this.day < other.day;
+            } else {
+                return this.month < other.month;
+            }
+        } else {
+            return this.year < other.year;
+        }
+    }
+
+    after(other: NapDate) {
+        if (!other) {
+            return false;
+        }
+        if (this.year === other.year) {
+            if (this.month === other.month) {
+                return this.day === other.day ? false : this.day > other.day;
+            } else {
+                return this.month > other.month;
+            }
+        } else {
+            return this.year > other.year;
+        }
+    }
+
+    toDateStruct(): NapDateStruct {
+        return { year: this.year, month: this.month, day: this.day };
+    }
+
+    toString() {
+        return `${this.year}-${this.month}-${this.day}`;
+    }
+}
+
 export interface DateRange {
-    fromDate: NgbDateStruct;
-    toDate: NgbDateStruct;
+    fromDate: NapDateStruct;
+    toDate: NapDateStruct;
 }
 
 export enum DateFormat {

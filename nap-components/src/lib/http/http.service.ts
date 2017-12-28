@@ -1,9 +1,7 @@
 ﻿import { Injectable } from '@angular/core';
-import { Http, RequestOptionsArgs, RequestOptions, ResponseContentType, Response } from '@angular/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/catch';
-import 'rxjs/add/operator/finally';
+import { catchError, map, tap } from 'rxjs/operators';
 import { SpinnerService } from '../spinner';
 import { ToastService } from '../toast';
 import { ExceptionService } from './exception.service';
@@ -12,29 +10,29 @@ import { HttpOptions, DefaultHttpOptions } from './http.model';
 @Injectable()
 export class HttpService {
     constructor(
-        private http: Http,
+        private httpClient: HttpClient,
         private exceptionService: ExceptionService,
         private spinnerService: SpinnerService,
         private toastService: ToastService
     ) { }
 
-    get<T>(url: string, options?: RequestOptionsArgs, httpOptions = DefaultHttpOptions): Observable<T> {
+    get<T>(url: string, body = {}, httpOptions = DefaultHttpOptions): Observable<T> {
         this.beforeRequest(httpOptions);
-        const observable = this.http.get(url, options).map(response => response.json());
+        const observable = this.httpClient.get<T>(url, body);
         return this.afterRequest<T>(observable, httpOptions);
     }
 
     post<T>(url: string, body = {}, httpOptions = DefaultHttpOptions): Observable<T> {
         this.beforeRequest(httpOptions);
-        const observable = this.http.post(url, body).map(response => response.json());
+        const observable = this.httpClient.post<T>(url, body);
         return this.afterRequest<T>(observable, httpOptions);
     }
 
-    download(url: string, body = {}, httpOptions = DefaultHttpOptions): Observable<Response> {
+    download(url: string, httpOptions = DefaultHttpOptions): Observable<Response> {
         this.beforeRequest(httpOptions);
-        const observable = this.http.post(url, body, new RequestOptions({
-            responseType: ResponseContentType.ArrayBuffer
-        }));
+        const observable = this.httpClient.post<any>(url, {
+            responseType: 'blob'
+        });
         return this.afterRequest<Response>(observable, httpOptions);
     }
 
@@ -49,10 +47,8 @@ export class HttpService {
 
     private afterRequest<T>(observable: Observable<T>, httpOptions: HttpOptions): Observable<T> {
         const noToast = httpOptions ? httpOptions.noToast : false;
-        observable = observable.catch(response => this.exceptionService.catchBadResponse(response, noToast));
-        if (httpOptions && !httpOptions.noSpinner) {
-            observable = observable.finally(() => this.spinnerService.hide());
-        }
-        return observable;
+        return observable.pipe(
+            catchError(this.exceptionService.handleError('', undefined))
+        );
     }
 }

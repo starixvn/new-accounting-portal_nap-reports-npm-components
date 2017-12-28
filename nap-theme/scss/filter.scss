@@ -1,25 +1,29 @@
-@import 'mixins';
-.filter-container {
+@import '_mixins';
+.nap-filter {
     padding: .3rem;
     margin-bottom: .5rem;
     border: solid 1px #cecccd;
-    border-radius: 0.3rem;
+    border-radius: .3rem;
     background-color: #eceeef;
     @include box-shadow(0 0 4px 1px rgba(0, 0, 0, .1));
     .row {
         margin-top: 3px;
     }
-    .col-nap {
-        padding-left: $grid-gutter-width-base / 2;
-        padding-right: $grid-gutter-width-base / 2;
+    .nap-col {
+        padding-left: $grid-gutter-width / 4;
+        padding-right: $grid-gutter-width / 4;
     }
-    .group-nap {
+    .nap-group {
         label {
             margin-right: .5em;
             text-align: right;
         }
-        .control-nap {
+        .nap-control {
             display: inline-block;
         }
+    }
+    .nap-form-checkbox {
+        display: inline-block;
+        margin-top: .3rem;
     }
 }

@@ -1,6 +1,5 @@
 import {
-    Component, Input, OnChanges, OnInit, Output, EventEmitter,
-    ExistingProvider, ViewChild, ViewEncapsulation, forwardRef
+    Component, Input, OnChanges, OnInit, Output, EventEmitter, ViewChild, ViewEncapsulation, forwardRef
 } from '@angular/core';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
 import { SelectDropdownComponent } from './select-dropdown.component';
@@ -18,17 +17,15 @@ const KEYS = {
     DOWN: 40
 };
 
-export const SELECT_VALUE_ACCESSOR: ExistingProvider = {
-    provide: NG_VALUE_ACCESSOR,
-    useExisting: forwardRef(() => SelectComponent),
-    multi: true
-};
-
 @Component({
     selector: 'nap-select',
     templateUrl: './select.component.html',
     styleUrls: ['./select.component.scss'],
-    providers: [SELECT_VALUE_ACCESSOR]
+    providers: [{
+        provide: NG_VALUE_ACCESSOR,
+        useExisting: forwardRef(() => SelectComponent),
+        multi: true
+    }]
 })
 export class SelectComponent implements ControlValueAccessor, OnChanges, OnInit {
     @Input() noDataMsg = 'There is no information available';

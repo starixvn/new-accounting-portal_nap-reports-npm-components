@@ -5,11 +5,11 @@ import { FilterModel } from './filter';
   selector: 'nap-root',
   templateUrl: './app.component.html',
   styleUrls: [
-    './app.component.css',
+    './app.component.scss',
     '../../node_modules/nap-theme/scss/header.scss'
   ]
 })
 export class AppComponent {
-  isShowFilter = true;
+  isShowSidebar = true;
   filterModel: FilterModel;
 }

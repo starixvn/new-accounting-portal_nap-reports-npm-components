@@ -1,25 +1,25 @@
 {
-  "name": "nap-theme",
-  "version": "1.1.4",
-  "main": "index.js",
-  "author": "Leo Vo",
-  "license": "MIT",
-  "scripts": {
-    "prebuild": "gulp",
-    "build": "node-sass scss/theme.scss css/theme.css --output-style=expanded --source-map=true --importer=sass-importer.js",
-    "prepublish": "yarn run build"
-  },
-  "peerDependencies": {
-    "bootstrap": "4.0.0-alpha.6"
-  },
-  "devDependencies": {
-    "base64-img": "^1.0.3",
-    "bootstrap": "4.0.0-alpha.6",
-    "gulp": "^3.9.1",
-    "image-size": "^0.6.1",
-    "node-sass": "^4.5.3",
-    "parse-filepath": "^1.0.1",
-    "rimraf": "^2.6.1",
-    "through2": "^2.0.3"
-  }
+    "name": "nap-theme",
+    "version": "2.0.0",
+    "main": "index.js",
+    "author": "Leo Vo",
+    "license": "MIT",
+    "scripts": {
+        "prebuild": "gulp",
+        "build": "node-sass scss/theme.scss css/theme.css --output-style=expanded --source-map=true --importer=sass-importer.js",
+        "prepublish": "npm run build"
+    },
+    "peerDependencies": {
+        "bootstrap": "^4.0.0-beta.2"
+    },
+    "devDependencies": {
+        "base64-img": "^1.0.3",
+        "bootstrap": "^4.0.0-beta.2",
+        "gulp": "^3.9.1",
+        "image-size": "^0.6.1",
+        "node-sass": "^4.5.3",
+        "parse-filepath": "^1.0.1",
+        "rimraf": "^2.6.1",
+        "through2": "^2.0.3"
+    }
 }

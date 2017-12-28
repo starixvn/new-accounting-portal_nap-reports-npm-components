@@ -1,6 +1,6 @@
 import { DatePipe } from '@angular/common';
 import { NgbDateParserFormatter } from '@ng-bootstrap/ng-bootstrap';
-import { NgbDateStruct } from '../date-model';
+import { NapDateStruct } from '../date-model';
 import { DateHelper } from '../date-helper';
 
 export class WeekParserFormatter extends NgbDateParserFormatter {
@@ -11,7 +11,7 @@ export class WeekParserFormatter extends NgbDateParserFormatter {
         super();
     }
 
-    format(dateStruct: NgbDateStruct): string {
+    format(dateStruct: NapDateStruct): string {
         if (dateStruct === null) {
             return '';
         }
@@ -22,8 +22,8 @@ export class WeekParserFormatter extends NgbDateParserFormatter {
         return `${weekNumber} (${dateString})`;
     }
 
-    parse(value: string): NgbDateStruct {
-        let returnVal: NgbDateStruct;
+    parse(value: string): NapDateStruct {
+        let returnVal: NapDateStruct;
         if (!value) {
             returnVal = null;
         } else {
@@ -41,7 +41,7 @@ export class WeekParserFormatter extends NgbDateParserFormatter {
         return returnVal;
     }
 
-    private getWeekNumber(dateStruct: NgbDateStruct): number {
+    private getWeekNumber(dateStruct: NapDateStruct): number {
         const jsDate = DateHelper.convertDateStructToDate(dateStruct);
         if (!isNaN(jsDate.getTime())) {
             jsDate.setFullYear(dateStruct.year);

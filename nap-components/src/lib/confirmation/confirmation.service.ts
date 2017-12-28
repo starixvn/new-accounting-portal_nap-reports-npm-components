@@ -9,7 +9,7 @@ export class ConfirmationService {
         private modalService: NgbModal
     ) { }
 
-    openContent(content: string, okCallback: () => void, cancelCallback: () => void = undefined) {
+    openContent(content: string, okCallback: () => void, cancelCallback?: () => void) {
         const setting: ConfirmationSetting = {
             content: content,
             okCallback: okCallback,

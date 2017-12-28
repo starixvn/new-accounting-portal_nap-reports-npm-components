@@ -1,11 +1,11 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { TreeviewItem } from 'ngx-treeview';
+import { TreeviewItem, TreeviewConfig } from 'ngx-treeview';
 import { SelectItem } from '../../lib/dropdown-select';
-import { NgbDateStruct, NgbDate } from '../../lib/date';
+import { NapDateStruct, NapDate } from '../../lib/date';
 import { ToastService, MessageType } from '../../lib/toast';
 import { ConfirmationService } from '../../lib/confirmation';
 import { FilterService } from './filter.service';
-import { Product, Currency, ReachedLimitLevel, FilterModel } from './filter.model';
+import { Product, ReachedLimitLevel, FilterModel } from './filter.model';
 
 @Component({
     selector: 'nap-filter',
@@ -18,19 +18,26 @@ import { Product, Currency, ReachedLimitLevel, FilterModel } from './filter.mode
 export class FilterComponent implements OnInit {
     @Output() generate = new EventEmitter<FilterModel>();
     sites: TreeviewItem[];
-    site: number;
+    siteId: number;
     products: Product[];
     productId: number;
-    currencies: Currency[];
-    currencyId: number;
-    fromDate: NgbDateStruct = NgbDate.fromToday();
-    toDate: NgbDateStruct = NgbDate.fromToday();
+    minDate: NapDateStruct = this.generateMinDate();
+    maxDate: NapDateStruct = this.generateMaxDate();
+    date: NapDateStruct = NapDate.fromToday();
+    fromDate: NapDateStruct = NapDate.fromToday();
+    toDate: NapDateStruct = NapDate.fromToday();
     isExcludeTestData = true;
     reachedLimitLevels: SelectItem[];
     reachedLimitLevel: ReachedLimitLevel;
+    devices: TreeviewItem[];
+    selectedDevices: string[];
     userName = 'Leo';
     value = 12;
-    private siteId = 0;
+    treeviewConfig = TreeviewConfig.create({
+        hasAllCheckBox: true,
+        hasCollapseExpand: true,
+        hasFilter: true
+    });
 
     constructor(
         private toastService: ToastService,
@@ -44,20 +51,19 @@ export class FilterComponent implements OnInit {
             this.products = products;
             this.productId = products[0].id;
         });
-        this.filterService.queryCurrencies().subscribe(currencies => {
-            this.currencies = currencies;
-            this.currencyId = currencies[0].id;
-        });
         this.filterService.queryReachedLimitLevels().subscribe(reachedLimitLevels => {
             this.reachedLimitLevels = reachedLimitLevels;
             this.reachedLimitLevel = reachedLimitLevels[0].value;
+        });
+        this.filterService.queryDevices().subscribe(devices => {
+            this.devices = devices;
         });
     }
 
     loadSite() {
         this.filterService.querySites().subscribe(sites => {
             this.sites = sites;
-            this.site = undefined;
+            this.siteId = undefined;
         });
     }
 
@@ -65,20 +71,33 @@ export class FilterComponent implements OnInit {
         this.confirmationService.openContent(
             'This is confirmation message',
             () => this.toastService.activate('OK confirmation', MessageType.Success),
-            () => this.toastService.activate('Cancel confirmation', MessageType.Danger))
+            () => this.toastService.activate('Cancel confirmation', MessageType.Danger));
     }
 
     search() {
-        const filterModel: FilterModel = {
+        this.generate.emit(this.model);
+    }
+
+    get model(): FilterModel {
+        return {
             fromDate: this.fromDate,
             toDate: this.toDate,
             productId: this.productId,
             reachedLimitLevel: this.reachedLimitLevel,
             userName: this.userName,
             siteId: this.siteId,
-            currencyId: this.currencyId,
+            devices: this.selectedDevices,
             isExcludeTestData: this.isExcludeTestData
         };
-        this.generate.emit(filterModel);
+    }
+
+    private generateMinDate(): NapDate {
+        const today = NapDate.fromToday();
+        return new NapDate(today.year - 1, 1, 1);
+    }
+
+    private generateMaxDate(): NapDate {
+        const today = NapDate.fromToday();
+        return new NapDate(today.year + 1, 12, 31);
     }
 }

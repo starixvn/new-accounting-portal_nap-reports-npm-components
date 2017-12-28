@@ -1,4 +1,4 @@
-import { Directive, ElementRef, Input, Renderer, OnChanges } from '@angular/core';
+import { Directive, ElementRef, Input, Renderer2, OnChanges } from '@angular/core';
 import * as _ from 'lodash';
 import * as numeral from 'numeral';
 import { renderClass, isValidNumber } from './helper';
@@ -7,16 +7,17 @@ import { renderClass, isValidNumber } from './helper';
     selector: '[napNumberFormat]'
 })
 export class NumberFormatDirective implements OnChanges {
+    // tslint:disable-next-line:no-input-rename
     @Input('napNumberFormat') value: number;
     @Input() format: string;
 
     constructor(
         private elementRef: ElementRef,
-        private renderer: Renderer
+        private renderer2: Renderer2
     ) { }
 
     ngOnChanges() {
-        renderClass(this.renderer, this.value, this.elementRef);
+        renderClass(this.renderer2, this.value, this.elementRef);
         let innerHTML = '';
         if (isValidNumber(this.value)) {
             if (this.format) {
@@ -27,6 +28,7 @@ export class NumberFormatDirective implements OnChanges {
         } else {
             innerHTML = 'N/A';
         }
-        this.renderer.setElementProperty(this.elementRef.nativeElement, 'innerHTML', innerHTML);
+
+        this.renderer2.setProperty(this.elementRef.nativeElement, 'innerHTML', innerHTML);
     }
 }

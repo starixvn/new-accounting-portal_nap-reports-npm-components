@@ -1,7 +1,6 @@
 import * as moment from 'moment';
 import * as _ from 'lodash';
-
-import { NgbDateStruct, DateRange, DateFormat } from './date-model';
+import { NapDateStruct, DateRange, DateFormat } from './date-model';
 
 export let DateHelper = {
     getWeekRangeOfDate: getWeekRangeOfDate,
@@ -18,14 +17,14 @@ export let DateHelper = {
     sameMomentDate: sameMomentDate
 };
 
-function getWeekRangeOfDate(dateStruct: NgbDateStruct): DateRange {
+function getWeekRangeOfDate(dateStruct: NapDateStruct): DateRange {
     return {
         fromDate: getFirstDayOfWeek(dateStruct),
         toDate: getLastDayOfWeek(dateStruct)
     };
 }
 
-function getFirstDayOfWeek(dateStruct: NgbDateStruct): NgbDateStruct {
+function getFirstDayOfWeek(dateStruct: NapDateStruct): NapDateStruct {
     const date = convertDateStructToDate(dateStruct);
     const day = date.getDay();
     if (day === 0) {
@@ -37,7 +36,7 @@ function getFirstDayOfWeek(dateStruct: NgbDateStruct): NgbDateStruct {
     return convertDateToDateStruct(date);
 }
 
-function getLastDayOfWeek(dateStruct: NgbDateStruct): NgbDateStruct {
+function getLastDayOfWeek(dateStruct: NapDateStruct): NapDateStruct {
     const date = convertDateStructToDate(dateStruct);
     const day = date.getDay();
     if (day === 0) {
@@ -49,32 +48,32 @@ function getLastDayOfWeek(dateStruct: NgbDateStruct): NgbDateStruct {
     return convertDateToDateStruct(date);
 }
 
-function convertDateStructToDate(dateStruct: NgbDateStruct): Date {
+function convertDateStructToDate(dateStruct: NapDateStruct): Date {
     return new Date(dateStruct.year, dateStruct.month - 1, dateStruct.day);
 }
 
-function convertDateToDateStruct(date: Date): NgbDateStruct {
+function convertDateToDateStruct(date: Date): NapDateStruct {
     return { year: date.getFullYear(), month: date.getMonth() + 1, day: date.getDate() };
 }
 
 /// example input: '2016-11-02T00:00:00'
-function convertStringToDateStruct(dateString: string): NgbDateStruct {
+function convertStringToDateStruct(dateString: string): NapDateStruct {
     return convertDateToDateStruct(new Date(dateString));
 }
 
 /// example output: '2016-11-02T00:00:00'
-function convertDateStructToString(dateStruct: NgbDateStruct): string {
+function convertDateStructToString(dateStruct: NapDateStruct): string {
     const yearString = dateStruct.year.toString();
     const monthString = ('0' + dateStruct.month).slice(-2);
     const dayString = ('0' + dateStruct.day).slice(-2);
     return `${yearString}-${monthString}-${dayString}T00:00:00`;
 }
 
-function convertDateStructToMoment(dateStruct: NgbDateStruct): moment.Moment {
+function convertDateStructToMoment(dateStruct: NapDateStruct): moment.Moment {
     return moment.utc([dateStruct.year, dateStruct.month - 1, dateStruct.day]);
 }
 
-function convertMomentToDateStruct(date: moment.Moment): NgbDateStruct {
+function convertMomentToDateStruct(date: moment.Moment): NapDateStruct {
     return { year: date.year(), month: date.month() + 1, day: date.date() };
 }
 

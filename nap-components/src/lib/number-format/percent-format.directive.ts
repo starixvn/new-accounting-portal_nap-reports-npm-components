@@ -1,28 +1,30 @@
-import { Directive, ElementRef, Input, Renderer, OnChanges } from '@angular/core';
+import { Directive, ElementRef, Input, Renderer2, OnChanges } from '@angular/core';
 import * as _ from 'lodash';
 import { NumberFormatHelper } from './number-format-helper';
 import { NumberFormatType } from './number-format.model';
 import { renderClass, isValidNumber } from './helper';
 
 @Directive({
-  selector: '[napPercentFormat]'
+    selector: '[napPercentFormat]'
 })
 export class PercentFormatDirective implements OnChanges {
-  @Input('napPercentFormat') value: number;
+    // tslint:disable-next-line:no-input-rename
+    @Input('napPercentFormat') value: number;
 
-  constructor(
-    private elementRef: ElementRef,
-    private renderer: Renderer
-  ) { }
+    constructor(
+        private elementRef: ElementRef,
+        private renderer2: Renderer2
+    ) { }
 
-  ngOnChanges() {
-    renderClass(this.renderer, this.value, this.elementRef);
-    let innerHTML = '';
-    if (isValidNumber(this.value)) {
-      innerHTML = NumberFormatHelper.format(this.value, NumberFormatType.Percent);
-    } else {
-      innerHTML = 'N/A';
+    ngOnChanges() {
+        renderClass(this.renderer2, this.value, this.elementRef);
+        let innerHTML = '';
+        if (isValidNumber(this.value)) {
+            innerHTML = NumberFormatHelper.format(this.value, NumberFormatType.Percent);
+        } else {
+            innerHTML = 'N/A';
+        }
+
+        this.renderer2.setProperty(this.elementRef.nativeElement, 'innerHTML', innerHTML);
     }
-    this.renderer.setElementProperty(this.elementRef.nativeElement, 'innerHTML', innerHTML);
-  }
 }

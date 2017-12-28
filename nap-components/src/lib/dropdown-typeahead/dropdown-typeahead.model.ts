@@ -5,5 +5,5 @@ export class TypeaheadQuery {
 
     constructor(search: (term: string) => Observable<string[]>) {
         this.search = search;
-    };
+    }
 }

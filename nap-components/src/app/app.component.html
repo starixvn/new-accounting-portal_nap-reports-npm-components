@@ -1,15 +1,47 @@
-<nap-navbar></nap-navbar>
-<div napRecheckin class="container-fluid" style="min-width: 1215px;">
-  <div class="header-container">
-    <div class="header-title">
-      Win Limit Control / <span class="active">Win Limit Monitor</span>
-      <i class="nap-icon" [ngClass]="{'nap-icon-header-expand': isShowFilter, 'nap-icon-header-collapse': !isShowFilter}" (click)="isShowFilter = !isShowFilter"
-        [title]="isShowFilter ? 'Hide filter' : 'Show filter'"></i>
+<nap-navbar napRecheckin></nap-navbar>
+<!-- <div napRecheckin class="container-fluid" style="min-width: 1215px;">
+    <div class="nap-header">
+        <div class="title">
+            nap-components /
+            <span class="active">Demo</span>
+            <i class="nap-icon" [ngClass]="{'nap-icon-header-expand': isShowFilter, 'nap-icon-header-collapse': !isShowFilter}" (click)="isShowFilter = !isShowFilter"
+                [title]="isShowFilter ? 'Hide filter' : 'Show filter'"></i>
+        </div>
+        <div>GMT-4</div>
     </div>
-    <div>GMT-4</div>
-  </div>
-  <nap-filter [hidden]="!isShowFilter" (generate)="filterModel = $event"></nap-filter>
-  <nap-toast></nap-toast>
-  <nap-grid [filterModel]="filterModel"></nap-grid>
+    <nap-filter [hidden]="!isShowFilter" (generate)="filterModel = $event"></nap-filter>
+    <nap-note>
+        <div>- You can see the report data up to 3 months. For more historical data, please click to HISTORY REPORT</div>
+        <div>- The Virtual Rate is applied to Sportsbook only. Other products are based on Actual Rate</div>
+    </nap-note>
+    <nap-toast></nap-toast>
+    <nap-grid [filterModel]="filterModel"></nap-grid>
 </div>
-<nap-spinner></nap-spinner>
+<nap-spinner></nap-spinner> -->
+<div class="container-fluid">
+    <div class="nap-header">
+        <div class="title">
+            nap-components /
+            <span class="active">Demo</span>
+            <i class="nap-icon" [ngClass]="{'nap-icon-header-expand': isShowSidebar, 'nap-icon-header-collapse': !isShowSidebar}" (click)="isShowSidebar = !isShowSidebar"
+                [title]="isShowSidebar ? 'Hide sidebar' : 'Show sidebar'"></i>
+        </div>
+        <div>GMT-4</div>
+    </div>
+    <div class="row">
+        <ul class="nav flex-column" [hidden]="!isShowSidebar">
+            <li class="nav-item" routerLinkActive="active">
+                <a class="nav-link" routerLink="form">Form</a>
+            </li>
+            <li class="nav-item" routerLinkActive="active">
+                    <a class="nav-link" routerLink="grid">Grid</a>
+                </li>
+            <li class="nav-item" routerLinkActive="active">
+                <a class="nav-link" routerLink="number-format">Number Format</a>
+            </li>
+        </ul>
+        <div class="col">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>

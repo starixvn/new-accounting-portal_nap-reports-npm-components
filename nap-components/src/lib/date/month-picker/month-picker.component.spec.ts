@@ -3,7 +3,7 @@ import { TestBed, ComponentFixture, async } from '@angular/core/testing';
 import { BrowserModule, By } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { eventHelper } from '../../../testing';
-import { NgbDateStruct } from '../date-model';
+import { NapDateStruct } from '../date-model';
 import { MonthPickerComponent } from './month-picker.component';
 
 @Component({
@@ -12,11 +12,11 @@ import { MonthPickerComponent } from './month-picker.component';
     `
 })
 class TestComponent {
-    selectedDate: NgbDateStruct;
-    date: NgbDateStruct = { year: 2016, month: 11, day: 2 };
-    minDate: NgbDateStruct = { year: 2016, month: 2, day: 2 };
-    maxDate: NgbDateStruct = { year: 2017, month: 3, day: 31 };
-    onDateChange(date: NgbDateStruct) {
+    selectedDate: NapDateStruct;
+    date: NapDateStruct = { year: 2016, month: 11, day: 2 };
+    minDate: NapDateStruct = { year: 2016, month: 2, day: 2 };
+    maxDate: NapDateStruct = { year: 2017, month: 3, day: 31 };
+    onDateChange(date: NapDateStruct) {
         this.selectedDate = date;
     }
 }
@@ -65,7 +65,7 @@ describe('MonthPickerComponent', () => {
         page.monthDebugEl.triggerEventHandler('change', { target: { value: '2' } });
         fixture.detectChanges();
         const date = component.selectedDate;
-        const expectedDate: NgbDateStruct = { year: 2016, month: 2, day: 2 };
+        const expectedDate: NapDateStruct = { year: 2016, month: 2, day: 2 };
         expect(date).toEqual(expectedDate);
     });
 
@@ -73,7 +73,7 @@ describe('MonthPickerComponent', () => {
         page.yearDebugEl.triggerEventHandler('change', { target: { value: '2017' } });
         fixture.detectChanges();
         const date = component.selectedDate;
-        const expectedDate: NgbDateStruct = { year: 2017, month: 3, day: 2 };
+        const expectedDate: NapDateStruct = { year: 2017, month: 3, day: 2 };
         expect(date).toEqual(expectedDate);
     });
 
@@ -83,7 +83,7 @@ describe('MonthPickerComponent', () => {
         page.yearDebugEl.triggerEventHandler('change', { target: { value: '2016' } });
         fixture.detectChanges();
         const date = component.selectedDate;
-        const expectedDate: NgbDateStruct = { year: 2016, month: 2, day: 1 };
+        const expectedDate: NapDateStruct = { year: 2016, month: 2, day: 1 };
         expect(date).toEqual(expectedDate);
     });
 });

@@ -1,14 +1,14 @@
-<ng-template #dt let-date="date" let-currentMonth="currentMonth" let-selected="selected" let-disabled="disabled">
+<ng-template #customDay let-date="date" let-currentMonth="currentMonth" let-selected="selected" let-disabled="disabled" let-focused="focused">
     <div (mouseenter)="onMouseEnter($event, disabled)" (mouseleave)="onMouseLeave($event, disabled)" (click)="onClick($event, disabled)"
-        [class.day-active]="isSelected(date)" [class.bg-primary]="selected" [class.text-white]="selected" [class.text-muted]="disabled"
-        [class.btn-secondary]="!disabled">
+        class="btn-light" [class.focused]="focused" [class.outside]="date.month !== currentMonth" [class.bg-primary]="isSelected(date)"
+        [class.text-white]="isSelected(date)">
         {{date.day}}
     </div>
 </ng-template>
 <div class="input-group" napDatePickerToggle #datePickerToggle="napDatePickerToggle">
-    <input class="form-control" readonly="readonly" ngbDatepicker #d="ngbDatepicker" [showWeekNumbers]="true" [dayTemplate]="dt"
-        [(ngModel)]="date" [minDate]="minDate" [maxDate]="maxDate" (ngModelChange)="onModelChange()" (click)="datePickerToggle.toggle(d, $event)">
-    <div class="input-group-addon" (click)="datePickerToggle.toggle(d, $event)">
+    <input class="form-control" readonly="readonly" ngbDatepicker #datePicker="ngbDatepicker" [showWeekNumbers]="true" [dayTemplate]="customDay"
+        [(ngModel)]="date" [minDate]="minDate" [maxDate]="maxDate" (ngModelChange)="onModelChange()" (click)="datePickerToggle.toggle(datePicker, $event)">
+    <div class="input-group-addon" (click)="datePickerToggle.toggle(datePicker, $event)">
         <i class="fa fa-calendar" aria-hidden="true"></i>
     </div>
 </div>

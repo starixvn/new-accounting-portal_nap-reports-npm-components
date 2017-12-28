@@ -4,7 +4,7 @@ import { BrowserModule, By } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { NgbDatepickerModule } from '@ng-bootstrap/ng-bootstrap';
 import { eventHelper } from '../../../testing';
-import { NgbDateStruct } from '../date-model';
+import { NapDateStruct } from '../date-model';
 import { DatePickerToggleDirective } from '../date-picker-toggle/date-picker-toggle.directive';
 import { DatePickerComponent } from './date-picker.component';
 
@@ -12,7 +12,7 @@ import { DatePickerComponent } from './date-picker.component';
     template: '<nap-date-picker [(date)]="date" (dateChange)="onDateChange()"></nap-date-picker>'
 })
 class TestComponent {
-    date: NgbDateStruct = { year: 2016, month: 11, day: 2 };
+    date: NapDateStruct = { year: 2016, month: 11, day: 2 };
     onDateChange() { }
 }
 

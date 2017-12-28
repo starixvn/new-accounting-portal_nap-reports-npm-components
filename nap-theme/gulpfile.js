@@ -7,7 +7,7 @@ var fs = require('fs');
 
 var baseContent = `.nap-icon {
   display: inline-block;
-  vertical-align: middle;
+  vertical-align: sub;
   cursor: pointer;
 }`;
 
@@ -46,6 +46,6 @@ function generateClass(className, dimensions, base64, pseudoClasses) {
 gulp.task('default', function () {
     gulp.src('./images/**/*.*').pipe(through2.obj(process, function (callback) {
         var content = classList.join('\n');
-        fs.writeFile('./scss/sprite.scss', content, callback);
+        fs.writeFile('./scss/_sprite.scss', content, callback);
     }));
 });

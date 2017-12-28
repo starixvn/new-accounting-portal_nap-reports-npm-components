@@ -1,7 +1,7 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { NgbDateParserFormatter } from '@ng-bootstrap/ng-bootstrap';
 import { DatePickerToggleDirective } from '../date-picker-toggle';
-import { NgbDateStruct } from '../date-model';
+import { NapDateStruct } from '../date-model';
 import { DateParserFormatter } from './date-parser-formatter';
 
 @Component({
@@ -14,10 +14,10 @@ import { DateParserFormatter } from './date-parser-formatter';
     }]
 })
 export class DatePickerComponent {
-    @Input() minDate: NgbDateStruct;
-    @Input() maxDate: NgbDateStruct;
-    @Input() date: NgbDateStruct;
-    @Output() dateChange = new EventEmitter<NgbDateStruct>();
+    @Input() minDate: NapDateStruct;
+    @Input() maxDate: NapDateStruct;
+    @Input() date: NapDateStruct;
+    @Output() dateChange = new EventEmitter<NapDateStruct>();
     datePickerToggle: DatePickerToggleDirective;
 
     constructor(

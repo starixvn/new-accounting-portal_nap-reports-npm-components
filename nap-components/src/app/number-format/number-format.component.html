@@ -1,0 +1,27 @@
+<div class="row">
+    <div class="col-12">
+        <p>Input:
+            <ngx-numeric-textbox [(ngModel)]="value"></ngx-numeric-textbox>
+        </p>
+        <p>
+            Integer format:
+            <span [napIntegerFormat]="value"></span>
+        </p>
+        <p>
+            Decimal format:
+            <span [napDecimalFormat]="value"></span>
+        </p>
+        <p>
+            Percent format:
+            <span [napPercentFormat]="value"></span>
+        </p>
+        <p>
+            Number format:
+            <span [napNumberFormat]="value" [format]="'0%'"></span>
+        </p>
+        <p>
+            Number style:
+            <span [napNumberStyle]="value">{{value}}</span>
+        </p>
+    </div>
+</div>

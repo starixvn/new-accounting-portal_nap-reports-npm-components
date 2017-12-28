@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, OnChanges, ViewChild } from '@angular/core';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import * as _ from 'lodash';
 import { PaginationService as NgxPaginationService, PaginatePipe } from 'ngx-pagination';
 import { PaginationInstance, PaginationService } from '../../lib/pagination';
@@ -6,7 +6,6 @@ import { ToastService, MessageType } from '../../lib/toast';
 import { CountdownTimerComponent } from '../../lib/countdown-timer';
 import { SpinnerService } from '../../lib/spinner';
 import { GridService } from './grid.service';
-import { FilterModel } from '../filter';
 import { ProductSetting } from './grid.model';
 
 @Component({
@@ -17,8 +16,7 @@ import { ProductSetting } from './grid.model';
         GridService
     ]
 })
-export class GridComponent implements OnInit, OnChanges {
-    @Input() filterModel: FilterModel;
+export class GridComponent implements OnInit {
     @ViewChild(CountdownTimerComponent) countdownTimerComponent: CountdownTimerComponent;
     breadcrumbItems = ['Win Limit Control', 'Win Limit Monitor'];
     paginationInstance: PaginationInstance;
@@ -41,13 +39,7 @@ export class GridComponent implements OnInit, OnChanges {
 
     ngOnInit() {
         this.paginatePipe = new PaginatePipe(this.ngxPaginationService);
-        this.toastService.activate('Press Search & waiting for 2 seconds', MessageType.Info);
-    }
-
-    ngOnChanges() {
-        if (this.filterModel) {
-            this.search();
-        }
+        this.search();
     }
 
     exportExcel() {

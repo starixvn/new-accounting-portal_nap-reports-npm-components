@@ -1,6 +1,6 @@
 @import 'mixins';
 $scroll-padding: 20px;
-.grid {
+.nap-grid {
     overflow-x: auto;
     width: 100%;
     @include calc( max-width, '100vw - 17px');

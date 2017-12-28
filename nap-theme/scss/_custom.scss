@@ -3,16 +3,10 @@
 /* bootstrap */
 
 select,
-button {
-    cursor: pointer;
-}
-
 button,
-input,
-optgroup,
-select,
-textarea {
-    font-family: $font-family-base;
+.form-check-label,
+.form-check-label input {
+    cursor: pointer;
 }
 
 ul {
@@ -31,18 +25,27 @@ input[placeholder] {
     }
 }
 
-.col-form-label {
-    padding-top: .2rem;
-    padding-bottom: .2rem;
+.btn {
+    &.nap-button {
+        padding: $input-btn-padding-y .5rem;
+    }
 }
 
-button.btn.dropdown-toggle {
+.dropdown {
+    .dropdown-toggle {
+        background-color: #fff;
+        border-color: #ccc;
+    }
+}
+
+
+/* button.btn.dropdown-toggle {
     padding-left: .6rem;
     padding-right: .6rem;
     &::after {
         margin-top: .4rem !important;
     }
-}
+} */
 
 .modal-dialog {
     .modal-header {
@@ -63,31 +66,12 @@ button.btn.dropdown-toggle {
 
 /* ngx-treeview */
 
-.treeview-header {
+
+/* .treeview-header {
     .divider {
-        margin: ($spacer-y / 2) 0 !important;
+        margin: ($spacer / 2) 0 !important;
     }
-}
+} */
 
 
 /* ngx-treeview */
-
-
-/* others */
-
-body {
-    padding-top: 2.5rem;
-}
-
-.nap-link {
-    color: $link-color;
-    text-decoration: $link-decoration;
-    cursor: pointer;
-    @include hover-focus {
-        color: $link-hover-color;
-        text-decoration: $link-hover-decoration;
-    }
-}
-
-
-/* others */

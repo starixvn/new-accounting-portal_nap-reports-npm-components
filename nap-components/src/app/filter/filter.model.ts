@@ -1,11 +1,6 @@
-import { NgbDateStruct } from '../../lib/date';
+import { NapDateStruct } from '../../lib/date';
 
 export interface Product {
-    id: number;
-    name: string;
-}
-
-export interface Currency {
     id: number;
     name: string;
 }
@@ -18,12 +13,12 @@ export enum ReachedLimitLevel {
 }
 
 export interface FilterModel {
-    fromDate: NgbDateStruct;
-    toDate: NgbDateStruct;
+    fromDate: NapDateStruct;
+    toDate: NapDateStruct;
     productId: number;
     reachedLimitLevel: ReachedLimitLevel;
     userName: string;
     siteId: number;
-    currencyId: number;
+    devices: string[];
     isExcludeTestData: boolean;
 }

@@ -1,7 +1,6 @@
 ﻿import { Injectable } from '@angular/core';
-import { Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/observable/of';
+import { of } from 'rxjs/observable/of';
 import { ToastService } from '../toast';
 
 @Injectable()
@@ -10,27 +9,17 @@ export class ExceptionService {
         private toastService: ToastService
     ) { }
 
-    catchBadResponse(response: Response, noToast = false): Observable<any> {
-        this.handleError(response, noToast);
-        return Observable.of();
-    }
+    handleError<T>(operation = 'operation', result?: T) {
+        return (error: any): Observable<T> => {
 
-    private handleError(response: Response, noToast: boolean) {
-        const defaultMessage = 'Sorry, an error occurred while processing your request, please notify the administrators.';
-        let errorMessage = '';
-        const contentType = response.headers.get('content-type');
-        if (contentType === 'text/html; charset=utf-8') {
-            errorMessage = defaultMessage;
-        } else {
-            errorMessage = response.statusText;
-            if (!errorMessage) {
-                const error = response.json();
-                errorMessage = error.errorMessage || defaultMessage;
-            }
-        }
+            // TODO: send the error to remote logging infrastructure
+            console.error(error); // log to console instead
 
-        if (!noToast) {
-            this.toastService.activate(errorMessage);
-        }
+            // TODO: better job of transforming error for user consumption
+            this.toastService.activate(`${operation} failed: ${error.message}`);
+
+            // Let the app keep running by returning an empty result.
+            return of(result as T);
+        };
     }
 }

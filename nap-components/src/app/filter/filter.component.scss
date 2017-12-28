@@ -1,41 +1,42 @@
 @import '~nap-theme/scss/filter';
-.col-nap-1 {
+$control-width: 200px;
+.nap-col-1 {
     label {
         width: 70px;
     }
-    .control-nap {
-        width: 180px;
+    .nap-control {
+        width: $control-width;
     }
 }
 
-.col-nap-2 {
+.nap-col-2 {
     label {
         width: 90px;
     }
-    .control-nap {
-        width: 180px;
+    .nap-control {
+        width: $control-width;
     }
 }
 
-.col-nap-3 {
+.nap-col-3 {
     label {
-        width: 70px;
+        width: 90px;
     }
-    .control-nap {
-        width: 180px;
+    .nap-control {
+        width: $control-width;
     }
 }
 
-.col-nap-4 {
+.nap-col-4 {
     label {
         width: 130px;
     }
-    .control-nap {
-        width: 180px;
+    .nap-control {
+        width: $control-width;
     }
 }
 
-.col-nap-exclude-test {
+.nap-col-exclude-test {
     margin-left: 1em;
     width: 322px;
 }

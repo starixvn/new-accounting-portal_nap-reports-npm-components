@@ -1,7 +1,7 @@
-import { Component, Renderer, Input, Output, EventEmitter, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, Renderer2, Input, Output, EventEmitter, OnChanges, SimpleChanges, ViewChild } from '@angular/core';
 import { NgbDateParserFormatter, NgbInputDatepicker, NgbDatepicker } from '@ng-bootstrap/ng-bootstrap';
 import { DatePickerToggleDirective } from '../date-picker-toggle';
-import { NgbDate, NgbDateStruct, DateRange, DateFormat } from '../date-model';
+import { NapDate, NapDateStruct, DateRange, DateFormat } from '../date-model';
 import { DateHelper } from '../date-helper';
 import { WeekParserFormatter } from './week-parser-formatter';
 
@@ -15,16 +15,17 @@ import { WeekParserFormatter } from './week-parser-formatter';
     }]
 })
 export class WeekPickerComponent implements OnChanges {
-    @Input() minDate: NgbDateStruct;
-    @Input() maxDate: NgbDateStruct;
-    @Input() date: NgbDateStruct;
-    @Output() dateChange = new EventEmitter<NgbDateStruct>();
+    @Input() minDate: NapDateStruct;
+    @Input() maxDate: NapDateStruct;
+    @Input() date: NapDateStruct;
+    @Output() dateChange = new EventEmitter<NapDateStruct>();
     datePickerToggle: DatePickerToggleDirective;
+    datePicker: NgbDatepicker;
     private currentWeekElement: HTMLElement;
     private weekRange: DateRange;
 
     constructor(
-        private renderer: Renderer
+        private renderer2: Renderer2
     ) { }
 
     ngOnChanges(changes: SimpleChanges) {
@@ -33,8 +34,8 @@ export class WeekPickerComponent implements OnChanges {
             this.weekRange = DateHelper.getWeekRangeOfDate(this.date);
             const day = this.weekRange.fromDate.day;
             if (this.minDate) {
-                const minNgbDate = NgbDate.fromDateStruct(this.minDate);
-                const fromNgbDate = NgbDate.fromDateStruct(this.weekRange.fromDate);
+                const minNgbDate = NapDate.fromDateStruct(this.minDate);
+                const fromNgbDate = NapDate.fromDateStruct(this.weekRange.fromDate);
                 if (minNgbDate.after(fromNgbDate)) {
                     this.updateDate(this.minDate);
                 } else {
@@ -51,6 +52,8 @@ export class WeekPickerComponent implements OnChanges {
             return;
         }
 
+        console.log(this.datePicker);
+        console.log(this.datePickerToggle);
         const weekElement = this.getWeekElement(event.target);
         if (weekElement) {
             const firstActiveDayElement = this.getFirstActiveDayElement(weekElement);
@@ -65,13 +68,13 @@ export class WeekPickerComponent implements OnChanges {
         const weekElement = this.getWeekElement(event.target);
         if (weekElement && weekElement !== this.currentWeekElement) {
             if (this.currentWeekElement) {
-                this.renderer.setElementClass(this.currentWeekElement, 'week-hover', false);
+                this.renderer2.removeClass(this.currentWeekElement, 'week-hover');
                 this.currentWeekElement = undefined;
             }
 
             if (!disabled) {
                 this.currentWeekElement = weekElement;
-                this.renderer.setElementClass(this.currentWeekElement, 'week-hover', true);
+                this.renderer2.addClass(this.currentWeekElement, 'week-hover');
             }
         }
     }
@@ -80,7 +83,7 @@ export class WeekPickerComponent implements OnChanges {
         if (this.currentWeekElement) {
             const weekElement = this.getWeekElement(event.relatedTarget);
             if (!weekElement || !disabled) {
-                this.renderer.setElementClass(this.currentWeekElement, 'week-hover', false);
+                this.renderer2.removeClass(this.currentWeekElement, 'week-hover');
                 this.currentWeekElement = undefined;
             }
         }
@@ -90,18 +93,19 @@ export class WeekPickerComponent implements OnChanges {
         this.dateChange.emit(this.date);
     }
 
-    isSelected(dateStruct: NgbDateStruct) {
-        const ngbDate = NgbDate.fromDateStruct(dateStruct);
+    isSelected(dateStruct: NapDateStruct) {
+        const ngbDate = NapDate.fromDateStruct(dateStruct);
+        const firstDayOfWeek = DateHelper.getFirstDayOfWeek(this.date);
+        const firstNgbDateOfWeek = NapDate.fromDateStruct(firstDayOfWeek);
         const lastDayOfWeek = DateHelper.getLastDayOfWeek(this.date);
-        const firstNgbDateOfWeek = NgbDate.fromDateStruct(this.date);
-        const lastNgbDateOfWeek = NgbDate.fromDateStruct(lastDayOfWeek);
+        const lastNgbDateOfWeek = NapDate.fromDateStruct(lastDayOfWeek);
         return (ngbDate.equals(firstNgbDateOfWeek) || ngbDate.after(firstNgbDateOfWeek)) &&
             (ngbDate.equals(lastNgbDateOfWeek) || ngbDate.before(lastNgbDateOfWeek));
     }
 
-    private updateDate(date: NgbDateStruct) {
-        const ngbDate = NgbDate.fromDateStruct(date);
-        const currentNgbDate = NgbDate.fromDateStruct(this.date);
+    private updateDate(date: NapDateStruct) {
+        const ngbDate = NapDate.fromDateStruct(date);
+        const currentNgbDate = NapDate.fromDateStruct(this.date);
         if (!ngbDate.equals(currentNgbDate)) {
             this.date = date;
             this.dateChange.emit(date);
@@ -121,7 +125,7 @@ export class WeekPickerComponent implements OnChanges {
     private getFirstActiveDayElement(weekElement: HTMLElement): HTMLElement {
         for (let i = 1; i < weekElement.children.length; i++) {
             const dayElement = weekElement.children[i] as HTMLElement;
-            if (dayElement.children[0].classList.contains('btn-secondary')) {
+            if (dayElement.children[0].classList.contains('btn-light')) {
                 return dayElement;
             }
         }

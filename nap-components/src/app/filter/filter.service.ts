@@ -3,7 +3,7 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/of';
 import { TreeviewItem } from 'ngx-treeview';
 import { SelectItem } from '../../lib/dropdown-select';
-import { Product, Currency, ReachedLimitLevel } from './filter.model';
+import { Product, ReachedLimitLevel } from './filter.model';
 
 @Injectable()
 export class FilterService {
@@ -43,18 +43,26 @@ export class FilterService {
         return Observable.of(products);
     }
 
-    queryCurrencies(): Observable<Currency[]> {
-        const currencies: Currency[] = [
-            {
-                id: 1,
-                name: 'USD'
-            },
-            {
-                id: 2,
-                name: 'VND'
-            }
+    queryDevices(): Observable<TreeviewItem[]> {
+        const devices: TreeviewItem[] = [
+            new TreeviewItem({
+                text: 'Mobile',
+                value: 'Mobile',
+                children: [
+                    { text: 'Smartphone', value: 'Smartphone' },
+                    { text: 'WAP', value: 'WAP' }
+                ]
+            }),
+            new TreeviewItem({
+                text: 'Non-Mobile',
+                value: 'Non-Mobile',
+                children: [
+                    { text: 'PC', value: 'PC' },
+                    { text: 'TV', value: 'TV' }
+                ]
+            })
         ];
-        return Observable.of(currencies);
+        return Observable.of(devices);
     }
 
     queryReachedLimitLevels(): Observable<SelectItem[]> {
