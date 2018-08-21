@@ -30,5 +30,5 @@ export class DatePickerComponent {
 }
 
 export function dateParserFormatterFactory() {
-    return new DateParserFormatter('longDate');
+    return new DateParserFormatter('mediumDate');
 }

@@ -1,7 +1,7 @@
 ﻿import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
-import { catchError, map, tap } from 'rxjs/operators';
+import { catchError } from 'rxjs/operators';
 import { SpinnerService } from '../spinner';
 import { ToastService } from '../toast';
 import { ExceptionService } from './exception.service';
@@ -9,6 +9,8 @@ import { HttpOptions, DefaultHttpOptions } from './http.model';
 
 @Injectable()
 export class HttpService {
+    private spinnerCount = 0;
+
     constructor(
         private httpClient: HttpClient,
         private exceptionService: ExceptionService,
@@ -41,12 +43,19 @@ export class HttpService {
             this.toastService.deactivate();
         }
         if (httpOptions && !httpOptions.noSpinner) {
+            this.spinnerCount++;
             this.spinnerService.show();
         }
     }
 
     private afterRequest<T>(observable: Observable<T>, httpOptions: HttpOptions): Observable<T> {
-        const noToast = httpOptions ? httpOptions.noToast : false;
+        if (httpOptions && !httpOptions.noSpinner) {
+            this.spinnerCount--;
+            if (this.spinnerCount === 0) {
+                this.spinnerService.hide();
+            }
+        }
+
         return observable.pipe(
             catchError(this.exceptionService.handleError('', undefined))
         );

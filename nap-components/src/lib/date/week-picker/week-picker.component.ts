@@ -135,5 +135,5 @@ export class WeekPickerComponent implements OnChanges {
 }
 
 export function weekParserFormatterFactory() {
-    return new WeekParserFormatter('longDate');
+    return new WeekParserFormatter('mediumDate');
 }

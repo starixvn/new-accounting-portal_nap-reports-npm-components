@@ -5,8 +5,7 @@ import { NapDateStruct } from '../date-model';
 
 @Component({
     selector: 'nap-month-picker',
-    templateUrl: './month-picker.component.html',
-    styleUrls: ['./month-picker.component.scss']
+    templateUrl: './month-picker.component.html'
 })
 export class MonthPickerComponent implements OnChanges {
     @Input() hasMonthLabel = false;
@@ -50,8 +49,8 @@ export class MonthPickerComponent implements OnChanges {
     }
 
     getMonthName(month: number) {
-        const monthFullNames = moment.months();
-        return monthFullNames[month - 1];
+        const monthNames = moment.monthsShort();
+        return monthNames[month - 1];
     }
 
     private generateMonths() {

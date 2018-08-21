@@ -7926,6 +7926,12 @@ input[placeholder]:-ms-input-placeholder {
   border-color: #ccc;
 }
 
+.nap-link {
+  color: #00f;
+  text-decoration: none;
+  cursor: pointer;
+}
+
 /* button.btn.dropdown-toggle {
     padding-left: .6rem;
     padding-right: .6rem;
