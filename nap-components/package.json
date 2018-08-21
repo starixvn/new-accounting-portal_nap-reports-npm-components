@@ -1,11 +1,11 @@
 {
   "name": "nap-components",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "description": "",
   "main": "index.js",
   "scripts": {
     "lint": "ng lint",
-    "start": "ng serve --port 5200",
+    "start": "ng serve --port 5200 --watch --proxy-config proxy.conf.json",
     "build:style": "gulp copy-style",
     "build": "gulp inline-templates && ngc -p tsconfig.lib.json && gulp copy-files",
     "prebuild": "rimraf dist tmp",

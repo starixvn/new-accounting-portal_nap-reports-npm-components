@@ -1,7 +1,7 @@
 ﻿import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
-import { catchError } from 'rxjs/operators';
+import { tap } from 'rxjs/operators';
 import { SpinnerService } from '../spinner';
 import { ToastService } from '../toast';
 import { ExceptionService } from './exception.service';
@@ -9,8 +9,6 @@ import { HttpOptions, DefaultHttpOptions } from './http.model';
 
 @Injectable()
 export class HttpService {
-    private spinnerCount = 0;
-
     constructor(
         private httpClient: HttpClient,
         private exceptionService: ExceptionService,
@@ -26,16 +24,17 @@ export class HttpService {
 
     post<T>(url: string, body = {}, httpOptions = DefaultHttpOptions): Observable<T> {
         this.beforeRequest(httpOptions);
-        const observable = this.httpClient.post<T>(url, body);
+        const observable = this.httpClient.post<T>(url, body)
+
         return this.afterRequest<T>(observable, httpOptions);
     }
 
-    download(url: string, httpOptions = DefaultHttpOptions): Observable<Response> {
+    download(url: string, body: any | {}, httpOptions = DefaultHttpOptions): Observable<Blob> {
         this.beforeRequest(httpOptions);
-        const observable = this.httpClient.post<any>(url, {
-            responseType: 'blob'
-        });
-        return this.afterRequest<Response>(observable, httpOptions);
+        const observable = this.httpClient
+            .post(url, body, { responseType: 'blob' });
+
+        return this.afterRequest<Blob>(observable, httpOptions);
     }
 
     private beforeRequest(httpOptions: HttpOptions) {
@@ -43,21 +42,23 @@ export class HttpService {
             this.toastService.deactivate();
         }
         if (httpOptions && !httpOptions.noSpinner) {
-            this.spinnerCount++;
             this.spinnerService.show();
         }
     }
 
     private afterRequest<T>(observable: Observable<T>, httpOptions: HttpOptions): Observable<T> {
-        if (httpOptions && !httpOptions.noSpinner) {
-            this.spinnerCount--;
-            if (this.spinnerCount === 0) {
-                this.spinnerService.hide();
-            }
-        }
 
-        return observable.pipe(
-            catchError(this.exceptionService.handleError('', undefined))
-        );
+        return observable
+            .pipe(
+                tap(
+                    () => {
+                        if (httpOptions && !httpOptions.noSpinner) {
+                            this.spinnerService.hide();
+                        }
+                    },
+                    error => this.exceptionService.handleError('', error)
+                ));
     }
+
+    private
 }
