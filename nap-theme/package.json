@@ -1,13 +1,14 @@
 {
     "name": "nap-theme",
-    "version": "2.0.6",
+    "version": "2.0.10",
     "main": "index.js",
     "author": "Leo Vo",
     "license": "MIT",
     "scripts": {
         "prebuild": "gulp",
         "build": "node-sass scss/theme.scss css/theme.css --output-style=expanded --source-map=true --importer=sass-importer.js",
-        "prepublish": "npm run build"
+        "prepublish": "npm run build",
+        "pub": "npm run build && npm publish"
     },
     "peerDependencies": {
         "bootstrap": "^4.0.0-beta.2"

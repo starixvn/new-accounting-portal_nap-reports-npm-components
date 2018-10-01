@@ -25,5 +25,14 @@
     .nap-form-checkbox {
         display: inline-block;
         margin-top: .3rem;
+    }   
+}
+
+:host /deep/ .show {
+    .dropdown-menu {
+        display: block;
+        .form-check-input {
+            margin-left: 0;
+        }
     }
 }
