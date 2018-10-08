@@ -135,5 +135,8 @@ export class WeekPickerComponent implements OnChanges {
 }
 
 export function weekParserFormatterFactory() {
-    return new WeekParserFormatter('mediumDate');
+    const formatter =  new WeekParserFormatter();
+    formatter.setDateFormat('mediumDate');
+
+    return formatter;
 }

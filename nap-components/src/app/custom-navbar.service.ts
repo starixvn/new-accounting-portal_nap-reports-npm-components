@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/observable/of';
+import { Observable } from 'rxjs';
+import { of } from 'rxjs';
 import { NavbarService, Navbar, UserMenu } from '../lib/navbar';
 
 @Injectable()
@@ -59,6 +59,6 @@ export class CustomNavbarService extends NavbarService {
                 }
             ]
         };
-        return Observable.of(navbar);
+        return of(navbar);
     }
 }

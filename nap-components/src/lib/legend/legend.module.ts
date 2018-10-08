@@ -9,7 +9,7 @@ import { LegendModalComponent } from './legend-modal.component';
 @NgModule({
     imports: [
         CommonModule,
-        NgbModalModule.forRoot(),
+        NgbModalModule,
         HttpModule.forRoot()
     ],
     declarations: [

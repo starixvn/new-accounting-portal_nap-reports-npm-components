@@ -2,7 +2,8 @@ import { NapDateStruct } from '../date-model';
 import { DateParserFormatter } from './date-parser-formatter';
 
 describe('DateParserFormatter', () => {
-    const formatter = new DateParserFormatter('longDate');
+    const formatter = new DateParserFormatter();
+    formatter.setDateFormat('longDate');
 
     describe('format', () => {
         it('should format a null input to empty string', () => {

@@ -1,6 +1,6 @@
 ﻿import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { SpinnerService } from '../spinner';
 import { ToastService } from '../toast';
@@ -24,7 +24,7 @@ export class HttpService {
 
     post<T>(url: string, body = {}, httpOptions = DefaultHttpOptions): Observable<T> {
         this.beforeRequest(httpOptions);
-        const observable = this.httpClient.post<T>(url, body)
+        const observable = this.httpClient.post<T>(url, body);
 
         return this.afterRequest<T>(observable, httpOptions);
     }
@@ -59,6 +59,4 @@ export class HttpService {
                     error => this.exceptionService.handleError('', error)
                 ));
     }
-
-    private
 }

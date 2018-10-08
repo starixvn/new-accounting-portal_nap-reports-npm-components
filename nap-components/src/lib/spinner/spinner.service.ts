@@ -1,6 +1,5 @@
 ﻿import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs/Subject';
-import { Observable } from 'rxjs/Observable';
+import { Subject, Observable } from 'rxjs';
 
 export interface SpinnerState {
     isShow: boolean;
@@ -8,10 +7,13 @@ export interface SpinnerState {
 
 @Injectable()
 export class SpinnerService {
-    private spinnerSubject = new Subject<SpinnerState>();
+    private spinnerSubject: Subject<SpinnerState>;
     private counter = 0;
-    spinnerState = this.spinnerSubject.asObservable();
-
+    spinnerState: Observable<SpinnerState>;
+    constructor() {
+        this.spinnerSubject = new Subject<SpinnerState>();
+        this.spinnerState = this.spinnerSubject.asObservable();
+    }
     show() {
         this.counter++;
         this.handleCounter();

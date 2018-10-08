@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/observable/of';
+import { Observable } from 'rxjs';
+import { of } from 'rxjs';
 import { TreeviewItem } from 'ngx-treeview';
 import { SelectItem } from '../../lib/dropdown-select';
 import { Product, ReachedLimitLevel } from './filter.model';
@@ -26,7 +26,7 @@ export class FilterService {
                 ]
             })
         ];
-        return Observable.of(sites);
+        return of(sites);
     }
 
     queryProducts(): Observable<Product[]> {
@@ -40,7 +40,7 @@ export class FilterService {
                 name: 'Virtual Sports'
             }
         ];
-        return Observable.of(products);
+        return of(products);
     }
 
     queryDevices(): Observable<TreeviewItem[]> {
@@ -62,7 +62,7 @@ export class FilterService {
                 ]
             })
         ];
-        return Observable.of(devices);
+        return of(devices);
     }
 
     queryReachedLimitLevels(): Observable<SelectItem[]> {
@@ -84,6 +84,6 @@ export class FilterService {
                 value: ReachedLimitLevel.Red
             }
         ];
-        return Observable.of(levels);
+        return of(levels);
     }
 }

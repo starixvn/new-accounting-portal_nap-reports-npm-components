@@ -17,7 +17,7 @@ import { Product, ReachedLimitLevel, FilterModel } from './filter.model';
 })
 export class FilterComponent implements OnInit {
     @Output() generate = new EventEmitter<FilterModel>();
-    sites: TreeviewItem[];
+    sites: TreeviewItem[] = [];
     siteId: number;
     products: Product[];
     productId: number;
@@ -29,7 +29,7 @@ export class FilterComponent implements OnInit {
     isExcludeTestData = true;
     reachedLimitLevels: SelectItem[];
     reachedLimitLevel: ReachedLimitLevel;
-    devices: TreeviewItem[];
+    devices: TreeviewItem[] = [];
     selectedDevices: string[];
     userName = 'Leo';
     value = 12;

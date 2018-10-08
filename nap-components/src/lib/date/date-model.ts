@@ -1,5 +1,3 @@
-import { DateHelper } from './date-helper';
-
 export interface NapDateStruct {
     /**
      * The year, for example 2016
@@ -32,7 +30,8 @@ export class NapDate {
     }
 
     static fromDate(date: Date): NapDate {
-        return NapDate.fromDateStruct(DateHelper.convertDateToDateStruct(date));
+        const dateStruct = { year: date.getFullYear(), month: date.getMonth() + 1, day: date.getDate() };
+        return NapDate.fromDateStruct(dateStruct);
     }
 
     constructor(public year: number, public month: number, public day: number) { }

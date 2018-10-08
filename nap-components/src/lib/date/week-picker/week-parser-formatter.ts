@@ -5,10 +5,10 @@ import { DateHelper } from '../date-helper';
 
 export class WeekParserFormatter extends NgbDateParserFormatter {
     private datePipe = new DatePipe('en-US');
-    constructor(
-        private dateFormatString: string
-    ) {
-        super();
+    private dateFormatString = '';
+
+    setDateFormat(dateFormatString: string) {
+        this.dateFormatString = dateFormatString;
     }
 
     format(dateStruct: NapDateStruct): string {

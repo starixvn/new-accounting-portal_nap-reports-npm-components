@@ -52,7 +52,7 @@ export class SelectComponent implements ControlValueAccessor, OnChanges, OnInit 
     @ViewChild('filterInput') filterInput: any;
 
     private _value: Array<any> = [];
-    private optionList: OptionList;
+    optionList: OptionList;
 
     // Selection state variables.
     hasSelected = false;
@@ -61,18 +61,18 @@ export class SelectComponent implements ControlValueAccessor, OnChanges, OnInit 
     hasFocus = false;
     isOpen = false;
     isBelow = true;
-    private filterEnabled = true;
-    private filterInputWidth = 1;
-    private isDisabled = false;
-    private placeholderView = '';
+    filterEnabled = true;
+    filterInputWidth = 1;
+    isDisabled = false;
+    placeholderView = '';
 
     private clearClicked = false;
     private selectContainerClicked = false;
 
     // Width and position for the dropdown container.
-    private width: number;
-    private top: number;
-    private left: number;
+    width: number;
+    top: number;
+    left: number;
 
     private onChange = (_: any) => { };
     private onTouched = () => { };

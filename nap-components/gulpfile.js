@@ -47,7 +47,7 @@ function compileSass(_path, ext, data, callback) {
 
 gulp.task('copy-style', () => {
     return gulp.src('./src/style/**/*')
-        .pipe(gulp.dest('./dist/style'));
+        .pipe(gulp.dest('./dist/tmp/style'));
 });
 
 gulp.task('copy-package', () => {
@@ -61,7 +61,7 @@ gulp.task('copy-package', () => {
             file.contents = new Buffer(contents, encode);
             callback(null, file);
         }))
-        .pipe(gulp.dest('./dist'));
+        .pipe(gulp.dest('./dist/tmp'));
 });
 
 gulp.task('copy-files', ['copy-style', 'copy-package']);

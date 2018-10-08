@@ -13,7 +13,7 @@ import { MomentFormatPipe } from './pipes/moment-format.pipe';
     imports: [
         CommonModule,
         FormsModule,
-        NgbDatepickerModule.forRoot()
+        NgbDatepickerModule
     ],
     declarations: [
         DatePickerComponent,

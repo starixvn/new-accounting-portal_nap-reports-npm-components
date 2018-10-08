@@ -1,4 +1,4 @@
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 
 export class TypeaheadQuery {
     readonly search: (term: string) => Observable<string[]>;

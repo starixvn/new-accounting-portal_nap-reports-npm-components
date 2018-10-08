@@ -24,7 +24,7 @@ describe('DatePickerComponent', () => {
         TestBed.configureTestingModule({
             imports: [
                 FormsModule,
-                NgbDatepickerModule.forRoot()
+                NgbDatepickerModule
             ],
             declarations: [
                 DatePickerComponent,
@@ -41,9 +41,9 @@ describe('DatePickerComponent', () => {
         tick();
     }));
 
-    it('should display "November 2, 2016" in input', () => {
+    it('should display "Nov 2, 2016" in input', () => {
         const inputDebugEl = fixture.debugElement.query(By.css('input'));
-        expect(inputDebugEl.nativeElement.value).toBe('November 2, 2016');
+        expect(inputDebugEl.nativeElement.value).toBe('Nov 2, 2016');
     });
 
     it('should emit event dateChange when change input value', () => {

@@ -30,5 +30,8 @@ export class DatePickerComponent {
 }
 
 export function dateParserFormatterFactory() {
-    return new DateParserFormatter('mediumDate');
+    const formatter =  new DateParserFormatter();
+    formatter.setDateFormat('mediumDate');
+
+    return formatter;
 }

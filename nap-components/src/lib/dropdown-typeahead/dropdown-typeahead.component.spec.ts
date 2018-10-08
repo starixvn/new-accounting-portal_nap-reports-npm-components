@@ -1,9 +1,8 @@
-import { Component, DebugElement } from '@angular/core';
+import { DebugElement } from '@angular/core';
 import { TestBed, ComponentFixture, async, fakeAsync, tick } from '@angular/core/testing';
-import { BrowserModule, By } from '@angular/platform-browser';
+import { By } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/observable/of';
+import { of } from 'rxjs';
 import { eventHelper, expect } from '../../testing';
 import { DropdownTypeaheadComponent } from './dropdown-typeahead.component';
 import { TypeaheadQuery } from './dropdown-typeahead.model';
@@ -20,7 +19,7 @@ class Page {
 
 describe('DropdownTypeaheadComponent', () => {
     const query = new TypeaheadQuery(term => {
-        return Observable.of(['1', '2']);
+        return of(['1', '2']);
     });
     let fixture: ComponentFixture<DropdownTypeaheadComponent>;
     let component: DropdownTypeaheadComponent;

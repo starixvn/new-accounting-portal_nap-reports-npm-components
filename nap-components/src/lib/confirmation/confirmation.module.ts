@@ -7,7 +7,7 @@ import { ConfirmationService } from './confirmation.service';
 @NgModule({
     imports: [
         CommonModule,
-        NgbModalModule.forRoot()
+        NgbModalModule
     ],
     declarations: [
         ConfirmationModalComponent
