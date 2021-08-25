@@ -31,3 +31,4 @@ _ReSharper*/
 #Nuget packages folder
 packages/
 /package-lock.json
+**/node_modules/**
