@@ -1,6 +1,6 @@
 {
   "name": "nap-components",
-  "version": "6.1.4",
+  "version": "7.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -30,17 +30,17 @@
     "numeral": "^2.0.6"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~0.8.4",
-    "@angular/cli": "^6.2.4",
-    "@angular/common": "^6.1.9",
-    "@angular/compiler": "^6.1.9",
-    "@angular/compiler-cli": "^6.1.9",
-    "@angular/core": "^6.1.9",
-    "@angular/forms": "^6.1.9",
-    "@angular/http": "^6.1.9",
-    "@angular/platform-browser": "^6.1.9",
-    "@angular/platform-browser-dynamic": "^6.1.9",
-    "@angular/router": "^6.1.9",
+    "@angular-devkit/build-angular": "~0.13.0",
+    "@angular/cli": "^7.3.10",
+    "@angular/common": "^7.2.16",
+    "@angular/compiler": "^7.2.16",
+    "@angular/compiler-cli": "^7.2.16",
+    "@angular/core": "^7.2.16",
+    "@angular/forms": "^7.2.16",
+    "@angular/http": "^7.2.16",
+    "@angular/platform-browser": "^7.2.16",
+    "@angular/platform-browser-dynamic": "^7.2.16",
+    "@angular/router": "^7.2.16",
     "@ng-bootstrap/ng-bootstrap": "^3.3.0",
     "@types/jasmine": "^2.8.9",
     "@types/node": "^8.10.34",
@@ -68,15 +68,16 @@
     "node-sass": "^4.9.3",
     "numeral": "^2.0.6",
     "rimraf": "^2.6.2",
-    "rxjs": "^6.3.3",
+    "rxjs": "^6.6.7",
     "through2": "^2.0.3",
     "ts-node": "~3.2.0",
     "tslint": "~5.7.0",
-    "typescript": "~2.9.2",
-    "zone.js": "^0.8.26",
+    "typescript": "~3.2.4",
+    "zone.js": "^0.8.29",
     "rxjs-compat": "^6.3.3",
-    "save-dev": "^2.0.0"
+    "save-dev": "^0.0.1-security"
   },
-  "dependencies": {       
+  "dependencies": {
+    "tslib": "^1.9.0"
   }
 }

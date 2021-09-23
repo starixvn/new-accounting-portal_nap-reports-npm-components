@@ -1,6 +1,6 @@
 {
   "name": "nap-theme",
-  "version": "6.1.0",
+  "version": "7.0.0",
   "main": "index.js",
   "author": "Leo Vo",
   "license": "MIT",
@@ -10,10 +10,10 @@
     "prepublish": "npm run build",
     "pub": "npm run build && npm publish"
   },
-  "peerDependencies": {
-  },
+  "peerDependencies": {},
   "devDependencies": {
-    "@angular/cli": "^6.2.4",
+    "@angular-devkit/build-angular": "~0.13.0",
+    "@angular/cli": "^7.3.10",
     "base64-img": "^1.0.4",
     "bootstrap": "^4.1.3",
     "gulp": "^3.9.1",
@@ -22,5 +22,8 @@
     "parse-filepath": "^1.0.1",
     "rimraf": "^2.6.1",
     "through2": "^2.0.3"
+  },
+  "dependencies": {
+    "tslib": "^1.9.0"
   }
 }

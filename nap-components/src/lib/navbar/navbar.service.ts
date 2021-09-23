@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import 'rxjs/add/operator/map';
+
 import { HttpService } from '../http';
 import { Navbar, Menu, UserMenu } from './navbar.model';
 
