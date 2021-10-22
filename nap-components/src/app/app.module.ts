@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, Injectable } from '@angular/core';
 import { NavbarModule, NavbarService } from '../lib/navbar';
 import { HttpModule } from '../lib/http';
 import { SpinnerModule } from '../lib/spinner';
@@ -13,6 +13,7 @@ import { NumberFormatModule } from './number-format';
 import { FilterModule } from './filter';
 import { GridModule } from './grid';
 
+@Injectable()
 export class CustomRecheckinConfig extends RecheckinConfig {
     checkinUrl = 'Checkin';
     logoutUrl = 'Logout';

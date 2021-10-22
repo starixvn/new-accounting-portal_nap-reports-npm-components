@@ -5,6 +5,7 @@
   "description": "An Angular numeric textbox component",
   "scripts": {
     "start": "ng serve",
+    "build": "ng build --prod",
     "lint": "ng lint",
     "test": "ng test",
     "test-coverage": "ng test --watch=false --code-coverage",

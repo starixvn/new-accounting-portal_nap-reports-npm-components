@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { Injectable } from '@angular/core';
 import { Observable ,  of } from 'rxjs';
 import { NavbarService, Navbar, UserMenu } from '../lib/navbar';

@@ -15,7 +15,7 @@ import { ToastService } from './toast.service';
     ]
 })
 export class ToastModule {
-    static forRoot(): ModuleWithProviders {
+    static forRoot(): ModuleWithProviders<ToastModule> {
         return {
             ngModule: ToastModule,
             providers: [

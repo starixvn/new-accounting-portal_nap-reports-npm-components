@@ -60,7 +60,7 @@ export class DropdownTreeviewSelectComponent implements OnChanges {
     }
 
     private selectItem(item: TreeviewItem) {
-        this.dropdownTreeviewComponent.dropdownDirective.close();
+        // this.dropdownTreeviewComponent.dropdownDirective.close();
         if (this.dropdownTreeviewSelectI18n.selectedItem !== item) {
             this.dropdownTreeviewSelectI18n.selectedItem = item;
             if (this.value !== item.value) {

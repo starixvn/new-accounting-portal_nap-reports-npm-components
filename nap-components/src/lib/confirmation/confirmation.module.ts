@@ -20,7 +20,7 @@ import { ConfirmationService } from './confirmation.service';
     ]
 })
 export class ConfirmationModule {
-    static forRoot(): ModuleWithProviders {
+    static forRoot(): ModuleWithProviders<ConfirmationModule> {
         return {
             ngModule: ConfirmationModule,
             providers: [
