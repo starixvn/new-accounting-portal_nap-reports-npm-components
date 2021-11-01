@@ -42,7 +42,7 @@ describe('NumericTextboxComponent', () => {
     });
 
     beforeEach(fakeAsync(() => {
-        const template = '<ngx-numeric-textbox [(ngModel)]="value" (enter)="onEnter()"></ngx-numeric-textbox>';
+        const template = '<nap-ngx-numeric-textbox [(ngModel)]="value" (enter)="onEnter()"></nap-ngx-numeric-textbox>';
         fixture = createTestComponent(template);
         component = fixture.componentInstance;
         fixture.detectChanges();

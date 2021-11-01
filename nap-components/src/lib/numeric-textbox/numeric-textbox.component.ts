@@ -75,7 +75,7 @@ export function createMaxValidator(max: number): ValidatorFn {
 }
 
 @Component({
-    selector: 'ngx-numeric-textbox',
+    selector: 'nap-ngx-numeric-textbox',
     templateUrl: './numeric-textbox.component.html',
     providers: [
         {
