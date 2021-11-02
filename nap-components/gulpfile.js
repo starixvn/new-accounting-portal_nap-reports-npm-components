@@ -45,12 +45,12 @@ function compileSass(_path, ext, data, callback) {
     callback(null, compiledCss.css);
 }
 
-gulp.task('copy-style', () => {
+gulp.task('copy-style', async () => {
     return gulp.src('./src/style/**/*')
         .pipe(gulp.dest('./dist/tmp/style'));
 });
 
-gulp.task('copy-package', () => {
+gulp.task('copy-package', async () => {
     gulp.src('./package.json')
         .pipe(through.obj((file, encode, callback) => {
             let contents = file.contents.toString(encode);
@@ -64,4 +64,4 @@ gulp.task('copy-package', () => {
         .pipe(gulp.dest('./dist/tmp'));
 });
 
-gulp.task('copy-files', ['copy-style', 'copy-package']);
+gulp.task('copy-files', gulp.series('copy-style', 'copy-package'));
