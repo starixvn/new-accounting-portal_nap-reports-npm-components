@@ -61,7 +61,7 @@
     "karma-jasmine-html-reporter": "^1.5.0",
     "lodash": "^4.17.21",
     "moment": "^2.22.2",
-    "nap-theme": "^2.0.10",
+    "nap-theme": "^12.2.11",
     "ngx-pagination": "^3.2.1",
     "ngx-treeview": "^10.0.2",
     "node-sass": "^4.12.0",
