@@ -61,7 +61,7 @@ gulp.task('copy-package', async () => {
             file.contents = new Buffer(contents, encode);
             callback(null, file);
         }))
-        .pipe(gulp.dest('./dist/tmp'));
+        .pipe(gulp.dest('./dist'));
 });
 
 gulp.task('copy-files', gulp.series('copy-style', 'copy-package'));

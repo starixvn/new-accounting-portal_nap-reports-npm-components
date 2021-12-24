@@ -1,6 +1,6 @@
 {
   "name": "nap-components",
-  "version": "12.2.11",
+  "version": "12.2.14",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -10,7 +10,7 @@
     "build": "gulp inline-templates && ngc -p tsconfig.lib.json && gulp copy-files",
     "prebuild": "rimraf dist tmp",
     "postbuild": "rimraf tmp",
-    "pub": "npm run build && npm publish dist/tmp",
+    "pub": "npm run build && npm publish dist",
     "test": "ng test",
     "test-coverage": "ng test --code-coverage",
     "ci": "ng lint && ng test --code-coverage --single-run=true"
