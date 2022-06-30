@@ -24,7 +24,7 @@ import { LegendModalComponent } from './legend-modal.component';
     ]
 })
 export class LegendModule {
-    static forRoot(): ModuleWithProviders {
+    static forRoot(): ModuleWithProviders<LegendModule> {
         return {
             ngModule: LegendModule,
             providers: [

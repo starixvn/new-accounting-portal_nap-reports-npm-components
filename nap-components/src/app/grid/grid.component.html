@@ -66,23 +66,23 @@
                             <th>
                                 Win Limit (RM)
                                 <div class="d-inline-block">
-                                    <ngx-numeric-textbox [(ngModel)]="orangeWinLimit" class="input-win-limit width-120px"></ngx-numeric-textbox>
+                                    <nap-ngx-numeric-textbox [(ngModel)]="orangeWinLimit" class="input-win-limit width-120px"></nap-ngx-numeric-textbox>
                                     <button type="button" class="btn btn-light" (click)="applyOrangeWinLimit()">Apply</button>
                                 </div>
                             </th>
                             <th>
                                 Win Limit (RM)
                                 <div class="d-inline-block">
-                                    <ngx-numeric-textbox [(ngModel)]="yellowWinLimit" class="input-win-limit width-120px">
-                                    </ngx-numeric-textbox>
+                                    <nap-ngx-numeric-textbox [(ngModel)]="yellowWinLimit" class="input-win-limit width-120px">
+                                    </nap-ngx-numeric-textbox>
                                     <button type="button" class="btn btn-light" (click)="applyYellowWinLimit()">Apply</button>
                                 </div>
                             </th>
                             <th>
                                 Win Limit (RM)
                                 <div class="d-inline-block">
-                                    <ngx-numeric-textbox [(ngModel)]="redWinLimit" class="input-win-limit width-120px">
-                                    </ngx-numeric-textbox>
+                                    <nap-ngx-numeric-textbox [(ngModel)]="redWinLimit" class="input-win-limit width-120px">
+                                    </nap-ngx-numeric-textbox>
                                     <button type="button" class="btn btn-light" (click)="applyRedWinLimit()">Apply</button>
                                 </div>
                             </th>
@@ -125,18 +125,18 @@
                                         <a (click)="showGroupSetting(setting.ProductName)" href="#"> {{ group.GroupName }}</a>
                                     </td>
                                     <td class="text-center">
-                                        <ngx-numeric-textbox class="input-win-limit" [class.text-danger]="group.OrangeMaxWinLimit === 0" [(ngModel)]="group.OrangeMaxWinLimit">
-                                        </ngx-numeric-textbox>
+                                        <nap-ngx-numeric-textbox class="input-win-limit" [class.text-danger]="group.OrangeMaxWinLimit === 0" [(ngModel)]="group.OrangeMaxWinLimit">
+                                        </nap-ngx-numeric-textbox>
                                         <span>(RM)</span>
                                     </td>
                                     <td class="text-center">
-                                        <ngx-numeric-textbox class="input-win-limit" [class.text-danger]="group.YellowMaxWinLimit === 0" [(ngModel)]="group.YellowMaxWinLimit">
-                                        </ngx-numeric-textbox>
+                                        <nap-ngx-numeric-textbox class="input-win-limit" [class.text-danger]="group.YellowMaxWinLimit === 0" [(ngModel)]="group.YellowMaxWinLimit">
+                                        </nap-ngx-numeric-textbox>
                                         <span>(RM)</span>
                                     </td>
                                     <td class="text-center">
-                                        <ngx-numeric-textbox class="input-win-limit" [class.text-danger]="group.RedMaxWinLimit === 0" [(ngModel)]="group.RedMaxWinLimit">
-                                        </ngx-numeric-textbox>
+                                        <nap-ngx-numeric-textbox class="input-win-limit" [class.text-danger]="group.RedMaxWinLimit === 0" [(ngModel)]="group.RedMaxWinLimit">
+                                        </nap-ngx-numeric-textbox>
                                         <span>(RM)</span>
                                     </td>
                                     <td class="text-center">

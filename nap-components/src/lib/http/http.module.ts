@@ -13,7 +13,7 @@ import { HttpService } from './http.service';
     ]
 })
 export class HttpModule {
-    static forRoot(): ModuleWithProviders {
+    static forRoot(): ModuleWithProviders<HttpModule> {
         return {
             ngModule: HttpModule,
             providers: [

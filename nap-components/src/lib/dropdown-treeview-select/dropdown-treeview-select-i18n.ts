@@ -1,6 +1,6 @@
-import { TreeviewItem, TreeviewSelection, TreeviewI18nDefault } from 'ngx-treeview';
+import { TreeviewItem, TreeviewSelection, DefaultTreeviewI18n  } from 'ngx-treeview';
 
-export class DropdownTreeviewSelectI18n extends TreeviewI18nDefault {
+export class DropdownTreeviewSelectI18n extends DefaultTreeviewI18n  {
     private internalSelectedItem: TreeviewItem;
 
     set selectedItem(value: TreeviewItem) {

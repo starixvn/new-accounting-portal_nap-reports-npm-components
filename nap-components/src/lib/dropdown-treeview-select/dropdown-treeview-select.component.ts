@@ -60,7 +60,6 @@ export class DropdownTreeviewSelectComponent implements OnChanges {
     }
 
     private selectItem(item: TreeviewItem) {
-        this.dropdownTreeviewComponent.dropdownDirective.close();
         if (this.dropdownTreeviewSelectI18n.selectedItem !== item) {
             this.dropdownTreeviewSelectI18n.selectedItem = item;
             if (this.value !== item.value) {
@@ -71,7 +70,7 @@ export class DropdownTreeviewSelectComponent implements OnChanges {
     }
 
     private selectAll() {
-        const allItem = this.dropdownTreeviewComponent.treeviewComponent.allItem;
+        const allItem = new TreeviewItem({ text: 'All', value: undefined });
         this.selectItem(allItem);
     }
 }

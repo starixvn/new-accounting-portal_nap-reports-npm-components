@@ -21,7 +21,7 @@ import { PaginationService } from './pagination.service';
     ]
 })
 export class PaginationModule {
-    static forRoot(): ModuleWithProviders {
+    static forRoot(): ModuleWithProviders<PaginationModule> {
         return {
             ngModule: PaginationModule,
             providers: [

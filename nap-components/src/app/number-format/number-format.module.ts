@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { NumericTextboxModule } from 'ngx-numeric-textbox';
+import { NumericTextboxModule } from '../../lib/numeric-textbox';
 import { NumberFormatModule as NumberFormatModuleLib } from '../../lib/number-format';
 import { NumberFormatComponent } from './number-format.component';
 

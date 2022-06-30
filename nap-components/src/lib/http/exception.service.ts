@@ -1,6 +1,5 @@
-﻿import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-import { of } from 'rxjs/observable/of';
+import { Injectable } from '@angular/core';
+import { Observable ,  of } from 'rxjs';
 import { ToastService } from '../toast';
 
 @Injectable()

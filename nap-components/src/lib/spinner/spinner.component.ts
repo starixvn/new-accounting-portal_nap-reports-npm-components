@@ -1,5 +1,5 @@
-﻿import { Component } from '@angular/core';
-import { Subscription } from 'rxjs/Subscription';
+import { Component } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { SpinnerState, SpinnerService } from './spinner.service';
 
 @Component({

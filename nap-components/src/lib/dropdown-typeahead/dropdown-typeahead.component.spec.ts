@@ -1,5 +1,5 @@
 import { DebugElement } from '@angular/core';
-import { TestBed, ComponentFixture, async, fakeAsync, tick } from '@angular/core/testing';
+import { TestBed, ComponentFixture, fakeAsync, tick, waitForAsync } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { of } from 'rxjs';
@@ -25,7 +25,7 @@ describe('DropdownTypeaheadComponent', () => {
     let component: DropdownTypeaheadComponent;
     let page: Page;
 
-    beforeEach(async(() => {
+    beforeEach(waitForAsync(() => {
         TestBed.configureTestingModule({
             imports: [FormsModule],
             declarations: [
@@ -63,7 +63,7 @@ describe('DropdownTypeaheadComponent', () => {
         expect(spy.calls.count()).toBe(1);
     });
 
-    it('should show dropdown after quering', async(() => {
+    it('should show dropdown after quering', waitForAsync(() => {
         component.minLengthHasSuggestion = 2;
         component.query = query;
         fixture.detectChanges();

@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-import { of } from 'rxjs';
+import { Observable ,  of } from 'rxjs';
 import { TreeviewItem } from 'ngx-treeview';
 import { SelectItem } from '../../lib/dropdown-select';
 import { Product, ReachedLimitLevel } from './filter.model';

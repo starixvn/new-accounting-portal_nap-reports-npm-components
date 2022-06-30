@@ -43,7 +43,7 @@ function generateClass(className, dimensions, base64, pseudoClasses) {
 }
 
 // generate sprite.png and _sprite.scss 
-gulp.task('default', function () {
+gulp.task('default', async function () {
     gulp.src('./images/**/*.*').pipe(through2.obj(process, function (callback) {
         var content = classList.join('\n');
         fs.writeFile('./scss/_sprite.scss', content, callback);
