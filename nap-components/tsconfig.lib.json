@@ -29,6 +29,7 @@
         "tmp/navbar/index.ts",
         "tmp/note/index.ts",
         "tmp/number-format/index.ts",
+        "tmp/numeric-textbox/index.ts",
         "tmp/pagination/index.ts",
         "tmp/select/index.ts",
         "tmp/spinner/index.ts",
