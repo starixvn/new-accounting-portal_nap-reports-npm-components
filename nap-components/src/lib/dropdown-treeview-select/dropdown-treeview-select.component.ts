@@ -43,7 +43,7 @@ export class DropdownTreeviewSelectComponent implements OnChanges {
     }
 
     select(item: TreeviewItem) {
-        if (item.children === undefined) {
+        if (!item.children) {
             this.selectItem(item);
         }
     }
@@ -62,11 +62,17 @@ export class DropdownTreeviewSelectComponent implements OnChanges {
     private selectItem(item: TreeviewItem) {
         if (this.dropdownTreeviewSelectI18n.selectedItem !== item) {
             this.dropdownTreeviewSelectI18n.selectedItem = item;
-            if (this.value !== item.value) {
+            if (this.dropdownTreeviewComponent) {
+              this.dropdownTreeviewComponent.onSelectedChange([item]);
+            }
+      
+            if (item) {
+              if (this.value !== item.value) {
                 this.value = item.value;
                 this.valueChange.emit(item.value);
+              }
             }
-        }
+          }
     }
 
     private selectAll() {

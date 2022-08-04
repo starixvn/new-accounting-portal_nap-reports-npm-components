@@ -1,5 +1,5 @@
 <ng-template #itemTemplate let-item="item" let-onCollapseExpand="onCollapseExpand" let-onCheckedChange="onCheckedChange">
-    <div class="form-check">
+    <div class="form-check pl-0">
         <i *ngIf="item.children" (click)="onCollapseExpand()" aria-hidden="true" class="fa" [class.fa-caret-right]="item.collapsed"
             [class.fa-caret-down]="!item.collapsed"></i>
         <label (click)="select(item)" [class.label-group]="item.children" [class.label-item]="!item.children">{{ item.text }}</label>

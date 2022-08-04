@@ -3,6 +3,7 @@ label {
     cursor: pointer;
     &.label-group {
         font-weight: bold;
+        padding-left: 5px;
     }
     &.label-item {
         &:hover {
