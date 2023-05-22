@@ -68,7 +68,7 @@ export class ChartDirective implements OnDestroy, OnChanges, OnInit {
     @Input() options: any = {};
     @Input() chartType: string;
     @Input() colors: Array<any>;
-    @Input() legend: boolean;
+    @Input() plugins: any[];
 
     @Output() chartClick: EventEmitter<any> = new EventEmitter();
     @Output() chartHover: EventEmitter<any> = new EventEmitter();
@@ -120,9 +120,6 @@ export class ChartDirective implements OnDestroy, OnChanges, OnInit {
     private getChartBuilder(ctx: any/*, data:Array<any>, options:any*/) {
         const datasets: any = this.getDatasets();
         const options: any = Object.assign({}, this.options);
-        if (this.legend === false) {
-            options.legend = { display: false };
-        }
         // hock for onHover and onClick events
         options.hover = options.hover || {};
         if (!options.hover.onHover) {
@@ -146,7 +143,8 @@ export class ChartDirective implements OnDestroy, OnChanges, OnInit {
                 labels: this.labels,
                 datasets: datasets
             },
-            options: options
+            options: options,
+            plugins: this.plugins
         };
 
         if (typeof Chart === 'undefined') {
